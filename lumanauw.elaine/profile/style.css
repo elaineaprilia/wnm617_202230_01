@@ -1,0 +1,87 @@
+* {
+	font-family: 'Open Sans', sans-serif;
+}
+
+body{
+	background-color: var(--darkpurple);
+	padding: 10vh 10vw;
+}
+
+
+.photo{
+	width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #555579;
+    background-image: url(img.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.container{
+	padding: 20px;
+	margin: 60px;
+	margin-top: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+.section{
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 280px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	background-color: var(--purple);
+	box-shadow: 12px 16px 27px -3px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	padding: 30px;
+}
+
+
+.cardwide{
+	margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 600px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	background-color: var(--purple);
+	box-shadow: 12px 16px 27px -3px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	padding: 30px;
+}
+
+
+#purple{
+	background-color: var(--purple);
+}
+
+#lightpink{
+	background-color: var(--lightpink);
+}
+
+
+:root {
+    --darkpurple: #130c25;
+    --purple: #301e5d;
+    --lightpink: #FFFAFA;
+    --black: #000000;
+    --white: #FFFFFF;
+}
