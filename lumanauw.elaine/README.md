@@ -5,7 +5,7 @@ Repositories of projects @ AAU's UxD class
 
 ## Links
 - https://lumanauw.xyz/
-- https://lumanauw.xyz/aau/wnm617/profile/index.html
+- https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/profile/index.html
 
 
 ### Additional notes  
