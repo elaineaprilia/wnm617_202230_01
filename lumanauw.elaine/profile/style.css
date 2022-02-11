@@ -1,10 +1,10 @@
-* {
+ * {
 	font-family: 'Open Sans', sans-serif;
     text-decoration: none
 }
 
 body{
-	background-color: var(--darkpurple);
+	background-color: #000;
 	padding: 10vh 10vw;
 }
 
