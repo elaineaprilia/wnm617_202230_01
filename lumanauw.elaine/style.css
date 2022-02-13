@@ -1,0 +1,136 @@
+ * {
+	font-family: 'Open Sans', sans-serif;
+    text-decoration: none
+}
+
+body{
+	background-color: #000;
+	padding: 10vh 10vw;
+}
+
+
+.photo{
+    width: 100%;
+    height: auto;
+    background-position: center;
+    overflow: visible;
+}
+
+
+.container{
+	padding: 20px;
+	margin: 60px;
+	margin-top: 80px;
+	display: flex;
+	flex-wrap: wrap;
+	box-sizing: border-box;
+}
+
+.section{
+	display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.card{
+    margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 200px;
+
+/*    display: flex;*/
+    flex-direction: column;
+    justify-content: space-between;
+/*	background-color: var(--purple);*/
+	box-shadow: 12px 16px 27px -3px rgba(0,0,0,0.1);
+	border-radius: 10px;
+	padding: 30px;
+}
+
+.heroimg{
+    width:100%;
+    height:auto;
+    border-radius: 10px;
+}
+
+
+.cardwide{
+	margin-right: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 500px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	background-color: var(--lightpink);
+	box-shadow: 12px 16px 27px -3px rgba(0,0,0,0.1);
+	border-radius: 10px;
+}
+
+
+#purple{
+	background-color: var(--purple);
+}
+
+#lightpink{
+	background-color: var(--lightpink);
+}
+
+
+/*FONT*/
+h1{
+    font-size: 70px;
+}
+
+
+h2.subheading{
+    padding-left: 20px;
+}
+
+p{
+    color: var(--lightpink);
+}
+
+#big{
+    margin: 0;
+    font-size: 30px;
+}
+
+
+/*TRANSITION*/
+
+.grow { transition: all .4s ease-in-out; }
+.grow:hover { transform: scale(1.07); }
+
+
+#imgheader{
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin-left:30px;
+    margin-top: 5px;
+}
+
+@media only screen and (max-width: 768px) {
+#block-yui_3_17_2_1_1638295024706_6089 {
+   display: none;
+ }
+}
+
+@keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 15px); }
+    to   { transform: translate(0, 0px); }    
+}
+
+
+:root {
+    --darkpurple: #130c25;
+    --purple: #301e5d;
+    --lightpink: #FFFAFA;
+    --black: #000000;
+    --white: #FFFFFF;
+}
