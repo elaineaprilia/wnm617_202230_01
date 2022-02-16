@@ -7,6 +7,8 @@ Repositories of projects @ AAU's UxD class
 - https://lumanauw.xyz/
 - https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/profile/index.html
 
+## Zen Garden
+- https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/zengarden/index.html
 
 ### Additional notes  
 Git commit process.
