@@ -1,0 +1,305 @@
+html{
+  padding: 0;
+  margin: 0;
+  font-family: poppins;
+}
+
+
+
+/*POS*/
+.main.supporting{
+  float: left;
+  width: 70%;
+}
+
+aside{
+  float: right;
+  width: 25%;
+  margin: 10px;
+  margin-right: 15px;
+}
+
+
+
+
+body{
+  margin: 0;
+/*  background-color: black;*/
+}
+
+
+.intro {
+  position: relative;
+  width: 100%;
+  height: 200%;
+  z-index: 1;
+  padding-top: -100px;
+  /*background-image: linear-gradient(0deg, transparent, black 75%);*/
+
+}
+
+.summary {
+  position: relative;
+  width: 100%;
+  background-image: linear-gradient(0deg, transparent, pink 130%);
+  overflow: hidden;
+
+
+  justify-content: center;
+  position: relative;
+  height: 20vw;
+  color: purple;
+  font-family: 'poppins', sans-serif;
+  font-size: 400%;
+  font-weight: 600;
+  letter-spacing: 0px;
+  line-height: 150%;
+  perspective: 400px;
+  text-align: center;
+}
+
+.summary p {
+  position: relative;
+  top: 99999px;
+  transform-origin: 50% 100%;
+  -webkit-animation: crawl 60s linear;
+}
+
+@keyframes crawl {
+  0% {
+    top: -100px;
+    transform: rotateX(20deg)  translateZ(0);
+  }
+  100% { 
+    top: -6000px;
+    transform: rotateX(25deg) translateZ(-2500px);
+  }
+}
+
+
+
+/*TITLE TEXT*/
+h1, h2{
+/*  text-align: center;*/
+  position: absolute;
+    color: #fff;
+    font-size: 410%;
+/*    text-transform: uppercase;*/
+    font-weight: 700;
+    background: linear-gradient(to right,#9300ff 10%, #ca8dfd 50%, #f0ceff 60%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2.8s linear infinite;
+    display: inline-block;
+    z-index: 0;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 300% center;
+  }
+}
+
+h2{
+top: 10%;
+bottom: 0;
+}
+
+
+h1::before {
+  content: "CSS Zen Garden";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 2px,
+    black 2px,
+    black 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0;
+  z-index: 2;
+  transition: 1s;
+}
+
+h1::after {
+  content: "CSS Zen Garden";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+h1:hover:before {
+  top: 10px;
+  left: 10px;
+}
+
+h1:hover:after {
+  top: -10px;
+  left: -10px;
+} 
+
+.preamble, .explanation, .participation, .benefits, .requirements{
+  padding: 20px;
+  margin: 55px;
+  border-radius: 19px;
+  width: 20%px;
+  height: auto;
+  -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -1px -6px 50px -22px rgba(0,0,0,0); 
+box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, -1px -6px 50px -22px rgba(0,0,0,0);
+  z-index: 999;
+}
+
+
+./*participaton{
+}
+*/
+
+.main.supporting, .participation{
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+
+}
+
+
+/*WOBBLE*/
+@-webkit-keyframes div {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@keyframes div {
+  16.65% {
+    -webkit-transform: translateY(8px);
+    transform: translateY(8px);
+  }
+  33.3% {
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  49.95% {
+    -webkit-transform: translateY(4px);
+    transform: translateY(4px);
+  }
+  66.6% {
+    -webkit-transform: translateY(-2px);
+    transform: translateY(-2px);
+  }
+  83.25% {
+    -webkit-transform: translateY(1px);
+    transform: translateY(1px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+div {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+}
+div:hover, div:focus, div:active {
+  -webkit-animation-name: div;
+  animation-name: div;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-iteration-count: 1;
+  animation-iteration-count: 1;
+}
+
+
+/*ASIDE*/
+
+a:link{
+  color: #7e7e7e;
+  text-decoration: blink;
+  font-family: 'Noto Sans Mono', monospace;
+  font-weight: 80;
+
+}
+
+ul{
+  color: black;
+  flex: 1;
+  font-size: 2em;
+  line-height: 1.2;
+  text-decoration: none;
+  background-image: linear-gradient(to right, yellow 0, yellow 100%);
+  background-position: 0 1.2em;
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+  transition: background .5s;
+
+  text-decoration: none;
+}
+
+li:hover{
+    background-position: 0 -0.1em;
+       background-image: linear-gradient(to right, yellow 0, lightgreen 100%);
+    }
+
+
+
+
+/*FOOTER*/
+
+footer{
+  text-align: center;
+  color: black;
+}
+
+footer a{
+  text-align: center;
+  color: black;
+  font-family: poppins;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  padding: 20px 0;
+  width: 100%;
+
+  border-width: 1px;
+}
