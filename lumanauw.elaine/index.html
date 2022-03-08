@@ -1,120 +1,398 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500&display=swap" rel="stylesheet">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, user-scalable=no">
+   <title>Okaybagel</title>
+
+   <base href="/aau/wnm617/lumanauw.elaine/">
+
+   <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   <link rel="stylesheet" href="lib/css/styles.css">
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap" rel="stylesheet">
 </head>
+
+
 <body>
 
-<div class="section">
- <div class="container">
-	<h1 style="color:var(--white)">Hiiiiiii, I'm Elaine!</h1>
-	<h3 style="color:var(--lightpink)">
+<!-- WELCOME PAGE; welcome-page -->
+	<section data-role="page" id="welcome-page">
+		<div class="splash-text">
+			<h1>Welcome to Okaybagel</h1>
+		</div>
 
-	A Product & Visual Designer who thrives for a more inclusive, accessible world through empathy & communication.
-
-	</h3>
- </div>
-
-	<div class="photo" id="imgheader">
-	  <img src="img.png" style="width:70%; height:'auto' ">
-	</div>
-</div>
-	
-	<h2 style="color:var(--white)">Connect with me</h2>
-	<div class="container">
+		<div class="splash-welcome-page"></div>
 		
-		<div class="card grow" style="background-color:#c11458;">
-			<a href="https://instagram.com/elainelumanauw/"><p id="big">
-				Personal Instagram
-			</p>
-			<p>@elainelumanauw</p></a>
+		<div class="splash-button">
+			<a href="#login-page"><button class="full login-button">Login</button></a>
+
+		<p class="margin-auto text-align-center" id="subheading">OR</p>
+
+
+			<a href="#signup-page"><button class="full signup-button">Sign up</button></a>
 		</div>
 
-		<div class="card grow" style="background-color:#d04673;">
-			<a href="https://instagram.com/design.laine/"><p id="big">
-				Design Instagram
-			</p>
-			<p>@design.laine</p></a>
-		</div>
-
-		<div class="card grow" style="background-color:#d04673;">
-			<a href="https://linkedin.com/in/elumanauw"><p id="big">
-				Linkedin
-			</p>
-			<p>Elaine Lumanauw</p></a>
-		</div>
-
-		<div class="card grow" style="background-color:#c43553;">
-			<a href="https://elainelumanauw.com"><p id ="big">
-				Portfolio
-			</p>
-			<p>elainelumanauw.com</p></a>
-		</div>
-
-	</div>
-
-	<h2 style="color:var(--white)">Recent projects</h2>
-
-	<div class="container">
-		
-
-		<div class="cardwide grow">
-			<a href="https://elainelumanauw.com/saharacase-study">
-		    	<img src="hero/sahara.jpg" class="heroimg">
-				<h2 style="color:var(--darkpurple)">Sahara Group: end-to-end UI/UX</h2>
-			</a>
-		</div>
-
-		<div class="cardwide grow">
-			<a href=https://www.elainelumanauw.com/zing-ux>
-				<img src="hero/zing.jpg" class="heroimg">
-		<h2 style="color:var(--darkpurple)">Zing: Data Visualization</h2>
-			</a>
-		</div>
-
-		<div class="cardwide grow">
-			<a href="https://www.elainelumanauw.com/listr-case-study">
-				<img src="hero/listr.jpg" class="heroimg">
-		<h2 style="color:var(--darkpurple)">Listr: Collaborative Grocery List</h2>
-			</a>
-		</div>
-
-		<div class="cardwide grow">
-			<a href="https://www.elainelumanauw.com/path-case-study">
-				<img src="hero/path.jpg" class="heroimg">
-				<h2 style="color:var(--darkpurple)">Path: UX Research for Int'l Students</h2>
-			</a>
-		</div>
-
-	</div>
-</div>
 
 
-<div class="section">
+	</section>
 
-	<div class="photo">
-	  <img src="profile.png" style="width:100%; height:'auto' ">
-	</div>
 
- <div class="container">
-	<h2 style="color:var(--white)">My dream job was to become a fairy. 🧚</h2>
-	<p style="color:var(--lightpink)">
+<!-- LOGIN; login-page -->
 
-…before I knew how fun it was to become a UI/UX Designer! I’ve never been passionate about anything other than going above and beyond to solve user needs and improve the experience of products.<br><br>
+  <section data-role="page" id="login-page">
+      <div data-role="main">
 
-I’ve led a startup company’s end-to-end mobile application from ideation to launch at SAHARA Group. I worked tirelessly at a 100+ employee company startup at Veev. I’ve also been promoted after just 5 months at Bursa Dapur!<br><br>
+      <div class="image-logo"></div>
 
-In my free time, I love baking, going to coffee shops, and hanging out with loved ones! Feel free to drop an email at elainelumanauw@gmail.com, or DM me at @design.laine. 🤩
+      <div class="page-control">
 
-	</p>
+      		<h1>Welcome back!</h1>
+
+      	<form id="login-form" class="form">
+      		<div class="form-control">
+      			<input type="text" placeholder="@username" id="login-username" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<input type="password" placeholder="********" id="login-username" data-role="none" class="form-input">
+      		</div>
+      	</div>
+      		<div class="form-control splash-button bottom-button">
+               <a href="#nav-page"><button>Login</button></a>
+            </div>
+         </form>
+      </div>
+   </section>
+
+
+<!-- end -->
+
+
+<!-- SIGNUP PAGE; signup-page -->
+
+  <section data-role="page" id="signup-page">
+
+  <header></header>
+
+  	<div class="page-control">
+  		<div class="display-flex flex-column margin-auto">
+ 		  <h1 class="nav-page-top">Set up a username</h1>
+ 		   <p>Let's setup a username for you! Make it short and sweet.</p>
+ 		</div>
+
+ 			<form id="login-form" class="form">
+ 				<div class="form-control">
+ 					<input type="text" placeholder="@username" id="login-username" data-role="none" class="form-input">
+      			</div>
+    </div>
+      		    <div class="bottom-button">
+               		<a href="#password-page"><button>next</button></a>
+            	</div>
+ 		</div>
+  </section>
+
+  <!-- PASSWORD PAGE; password-page -->
+
+  <section data-role="page" id="password-page">
+
+  <header>
+  		  <a href="#signup-page"><div class="image-icon" id="chevron-left"></div></a>
+  </header>
+
+
+
+  	<div class="page-control">
+
+  	   <div class="display-flex flex-column">
+ 		  <h1 class="nav-page-top">Password</h1>
+ 		   <p>What's a good password for your bagel app?</p>
+	   </div>
+ 			<form id="login-form" class="form">
+
+ 				<div class="form-control">
+ 					<input type="password" placeholder="*************" id="login-password" data-role="none" class="form-input">
+      			</div>
+      			<p class="subheading">must be at least 8 characters.</p>
+
+ 		   <p class="page-control">Confirm password</p>
+
+ 				<div class="form-control">
+ 					<input type="password" placeholder="*************" id="login-password" data-role="none" class="form-input">
+      			</div>
+      	 </div>
+
+
+      		    <div class="bottom-button">
+               		<a href="#confirmation-signup-page"><button>next</button></a>
+            	</div>
+ 		</div>
+ 	</form>
  </div>
-</div>
+  </section>
 
+
+<!-- CONFIRMATION SIGNUP PAGE; confirmation-signup-page -->
+
+  <section data-role="page" id="confirmation-signup-page">
+
+		<div class="splash-welcome-page"></div>
+
+		<div class="page-control">
+  			<div class="display-flex flex-column">
+ 			  <h1 class="nav-page-top">Yaay, you're all set.</h1>
+ 		  	  <p>You can change your username and password on your profile page.</p>
+ 			</div>
+ 		</div>
+ 			<form id="login-form" class="form">
+      		    <div class="bottom-button">
+               		<a href="#nav-page"><button>Get Started</button></a>
+            	</div>
+
+            </form>
+ 		</div>
+ 	  </header>
+  </section>
+
+
+
+<!-- end -->
+
+
+<!-- NAV PAGE; nav-page -->
+
+ 	<section data-role="page" id="nav-page">
+
+<!-- PLUS BUTTON -->
+	  <a class="fixedButton" href="#add-new">
+      	<div class="roundedFixedBtn"></div>
+      </a>
+<!-- end -->
+
+ 	   <header data-role="header" class="navbar-header">
+ 		<h1 class="nav-page-top">Elaine's Bagels</h1>
+ 			<div class="image-icon profile-icon">
+ 				<a href="#profile-page">icon</a>
+ 			</div>
+ 	   </header>
+
+
+<!-- SEARCH BAR  -->
+
+		<div id="search-form">
+  	  	 <form class="form">
+ 				<div class="form-control">
+ 					<input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
+      			</div>
+
+  	     </form>
+  	    </div>
+
+<!-- BAGEL LIST EXISTING -->
+		<div class="gallery-control">
+   			<div class="display-grid flex-column">
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   			</div>
+   		</div>
+   	</div>
+   		</section>
+<!-- end -->
+
+
+
+
+
+<!-- BAGEL PAGE; bagel-page -->
+
+
+	<section data-role="page" id="bagel-page">
+ 	   <header data-role="header" class="display-flex flex-row space-between">
+ 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
+ 			<h1 class="nav-page-top">Bagel Details</h1>
+ 			<div class="image-icon edit"><a href="#edit-bagel">edit</a></div>
+ 		</header>
+
+ 	<div class="details"></div>
+ 		<div class="image-bagel"></div>
+ 	<div class="display-flex flex-column detail-text">
+ 		<h1>Asiago Bagel</h1>
+ 		<hr>
+ 		<h3>Flavor</h3>
+ 		<p>Nutty</p>
+ 		<h3>Price</h3>
+ 		<p>$4.25</p>
+ 		<h3>Rating</h3>
+ 		<p>Hella gooooood</p>
+
+ 	</div>
+	</section>
+
+
+<!-- end -->
+
+
+
+
+
+
+<!-- PROFILE PAGE; profile-page-->
+
+ 	<section data-role="page" id="profile-page">
+	  <header>
+	  		  <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+	  </header>
+
+ 		</header>
+ 	<div class="page-control">
+ 		<div class="align-center display-flex flex-column justify-content-center align-items-center">
+ 			<div class="profile-image"></div>
+ 			<h2>Elaine Lumanauw</h2>
+ 		</div>
+ 	</div>
+ 		<hr>
+
+
+ 	<!-- ul>li*6>a[href=#setting-profile> -->
+ 
+<!--  		<ul>
+ 			<li><a href="#setting-edit-account">Edit account</a></li>
+ 			<li><a href="#setting-profile">About</a></li>
+ 			<li><a href="#setting-profile">Notifications</a></li>
+ 			<li><a href="#setting-profile">Get help</a></li>
+ 			<li><a href="#setting-profile">Refer friends, get $10</a></li>
+ 			<li><a href="#login-page">Logout</a></li>
+ 		</ul> -->
+
+ 	<table id="settings-list">
+ 		<tr>
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td>Edit account</td>
+ 			<td> > </td>
+ 		</tr>
+ 		<tr>
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td>About Okaybagel</td>
+ 			<td> > </td>
+ 		</tr>
+ 			<tr onclick="window.location='#';">
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td>Notifications</td>
+ 			<td> > </td>
+ 		</tr>
+ 		<tr>
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td>Edit account</td>
+ 			<td> > </td>
+ 		</tr>
+ 		<tr>
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td>About Okaybagel</td>
+ 			<td> > </td>
+ 		</tr>
+ 			<tr onclick="window.location='#';">
+ 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td style="color:red">Logout</td>
+ 			<td> > </td>
+ 		</tr>
+ 	</table>
+
+
+
+
+
+ 	</section>
+
+<!-- end -->
+
+
+<!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
+
+<section data-role="page" id="setting-edit-account">
+      	<form id="edit-profile-form" class="form">
+      		
+      		<div class="form-control">
+      		  <label for="username-existing">Username</label>
+      			<input type="text" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<label for="username-existing">Password</label>
+      			<input type="password" placeholder="********" id="username-existing" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+               <a href="#profile-page" class="form-button">Save</a>
+            </div>
+         </form>
+</section>	
+
+<!-- end -->
+
+
+
+<!-- ADD NEW BAGEL; add-new -->
+	<section data-role="page" id="add-new">
+	  <header>
+	  		  <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+	  </header>
+
+	  <div class="page-control">
+  		<div class="display-flex margin-auto">
+ 		  <h1 class="nav-page-top">Add a new bagel</h1>
+ 		</div>
+ 	</div>
+
+
+	  <div class="page-control">
+	      	<form id="edit-profile-form" class="form">
+      		
+      		<div class="form-control">
+      		  <label for="username-existing">Name of bagel</label>
+      			<input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<label for="username-existing">Flavor</label>
+      			<input type="text" placeholder="e.g. strawberry" id="edit-flavor" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      		  <label for="username-existing">Price</label>
+      			<input type="text" placeholder="Everything Bagel" id="edit-price" data-role="none" class="form-input">
+      		</div>
+
+      		<div class="form-control">
+      			<label for="username-existing">Rating</label>
+      			<input type="text" placeholder="e.g. strawberry" id="edit-rating" data-role="none" class="form-input">
+      		</div>
+
+
+      		<div class="form-control">
+               <a href="#nav-page" class="form-button"><button>Save</button></a>
+            </div>
+         </form>
+     </div>
+	</section>
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   <script src="lib/js/javascript.js"></script>
 </body>
 </html>
+
