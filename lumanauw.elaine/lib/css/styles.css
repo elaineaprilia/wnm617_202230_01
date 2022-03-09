@@ -316,3 +316,5 @@ table tr td:nth-child(1) {
 .float-left{ float: left }
 
 .margin-auto{ margin:auto }
+
+.overflow-scroll{ overflow: auto; }
