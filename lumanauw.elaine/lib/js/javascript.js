@@ -1,22 +1,40 @@
-// sticky //
 
-window.onscroll = function() {myFunction()};
+$(() => {
+   checkUserId();
 
-var search-form = document.getElementById("search-form");
-var sticky = search-form.offsetTop;
+   // EVENT DELEGATION
+   $(document)
 
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    search-form.classList.add("sticky")
-  } else {
-    search-form.classList.remove("sticky");
-  }
-}
+   // FORM SUBMISSIONS
+   .on("submit", "#signin-form", function(e) {
+      e.preventDefault();
+      checkLoginForm();
+   })
 
-//CLICKABLE ROW//
 
-jQuery(document).ready(function($) {
-    $(".clickable-row").click(function() {
-        window.location = $(this).data("href");
-    });
+   // CLICKS
+   .on("click", ".js-logout", function() {
+      sessionStorage.removeItem("userId");
+      checkUserId();
+   })
+
+
+   // ACTIVATE TOOLS
+   .on("click", "[data-activate]", function() {
+      let target = $(this).data("activate");
+      $(target).addClass("active")
+   })
+   .on("click", "[data-deactivate]", function() {
+      let target = $(this).data("deactivate");
+      $(target).removeClass("active")
+   })
+   .on("click", "[data-toggle]", function() {
+      let target = $(this).data("toggle");
+      $(target).toggleClass("active")
+   })
+   .on("click", "[data-activateone]", function() {
+      let target = $(this).data("activate");
+      $(target).addClass("active")
+         .siblings().removeClass("active")
+   })
 });

@@ -14,6 +14,11 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap" rel="stylesheet">
+
+   <script src="lib/js/jquery-2.2.4.min.js"></script>
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+   <script src="js/app.js"></script>
+   <script src="js/signin.js"></script>
 </head>
 
 
@@ -21,25 +26,50 @@
 
 <!-- WELCOME PAGE; welcome-page -->
 	<section data-role="page" id="welcome-page">
-		<div class="splash-text">
-			<h1>Welcome to Okaybagel</h1>
-		</div>
-
-		<div class="splash-welcome-page"></div>
-		
+  <div class="splash-welcome-page"></div>
 		<div class="splash-button">
-			<a href="#login-page"><button class="full login-button">Login</button></a>
 
-		<p class="margin-auto text-align-center" id="subheading">OR</p>
+      <a href="#onboarding-1"><button class="full signup-button">I'm new here!</button></a>
 
+    <p class="margin-auto text-align-center" id="subheading">OR</p>
 
-			<a href="#signup-page"><button class="full signup-button">Sign up</button></a>
+			<a href="#login-page"><button class="full login-button">I have an account</button></a>
 		</div>
-
-
-
 	</section>
 
+<!-- ONBOARDING 1; onboarding-1 -->
+
+<section data-role="page" id="onboarding-1">
+  <a href="#signup-page"><header style="float:right">skip</header></a>
+  <div class="onboarding-img-1"></div>
+
+  <div class="page-control">
+    <h3 class="text-align-center">No more messy bagel tracking.</h3>
+    <p class="text-align-center">Whip out your phone whenever you eat a bagel. Track it. Voila.</p>
+  </div>
+
+  <div class="bottom-button">
+        <a href="#onboarding-2"><button>Next ➜</button></a>
+    </div>
+
+</section>
+
+<!-- ONBOARDING 2; onboarding-2 -->
+
+<section data-role="page" id="onboarding-2">
+  <a href="#signup-page"><header style="float:right">skip</header></a>
+  <div class="onboarding-img-1"></div>
+
+  <div class="page-control">
+    <h3 class="text-align-center">Look back at your the best bagels.</h3>
+    <p class="text-align-center">Want to relive your best bagel experiences? Well, just type and search.</p>
+  </div>
+
+  <div class="bottom-button">
+        <a href="#signup-page"><button>Sign up</button></a>
+    </div>
+
+</section>
 
 <!-- LOGIN; login-page -->
 
@@ -61,8 +91,8 @@
       			<input type="password" placeholder="********" id="welcomeback-login-password" data-role="none" class="form-input">
       		</div>
       	</div>
-      		<div class="form-control splash-button bottom-button">
-               <a href="#nav-page"><button class="form-button" type="submit" data-role="none">Login</button></a>
+      		<div class="form-control bottom-button">
+               <a href="#nav-page"><button class="form-button" type="submit">Login</button></a>
             </div>
          </form>
       </div>
@@ -76,11 +106,13 @@
 
   <section data-role="page" id="signup-page">
 
-  <header></header>
+  <header>
+        <a href="#welcome-page"><div class="image-icon" id="chevron-left"></div></a>
+  </header>
 
   	<div class="page-control">
   		<div class="display-flex flex-column margin-auto">
- 		  <h1 class="nav-page-top">Set up a username</h1>
+ 		  <h1 class="nav-page-top">Set up a username</h1><br>
  		   <p>Let's setup a username for you! Make it short and sweet.</p>
  		</div>
 
@@ -95,7 +127,7 @@
  		</div>
   </section>
 
-  <!-- PASSWORD PAGE; password-page -->
+<!-- PASSWORD PAGE; password-page -->
 
   <section data-role="page" id="password-page">
 
@@ -108,17 +140,16 @@
   	<div class="page-control">
 
   	   <div class="display-flex flex-column">
- 		  <h1 class="nav-page-top">Password</h1>
+ 		  <h1 class="nav-page-top">Password</h1><br>
  		   <p>What's a good password for your bagel app?</p>
 	   </div>
  			<form id="login-form" class="form">
 
  				<div class="form-control">
- 					<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input">
+ 					<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input"><br>
       			</div>
-      			<p class="subheading">must be at least 8 characters.</p>
 
- 		   <p class="page-control">Confirm password</p>
+ 		   <p>Confirm password</p>
 
  				<div class="form-control">
  					<input type="password" placeholder="*************" id="new-login-password-2" data-role="none" class="form-input">
@@ -144,18 +175,79 @@
 		<div class="page-control">
   			<div class="display-flex flex-column">
  			  <h1 class="nav-page-top">Yaay, you're all set.</h1>
+        <br>
  		  	  <p>You can change your username and password on your profile page.</p>
  			</div>
  		</div>
  			<form id="signup-form" class="form">
       		    <div class="bottom-button">
-               		<a href="#nav-page"><button>Get Started</button></a>
+               		<a href="#nav-page-empty-state"><button>Get Started</button></a>
             	</div>
 
             </form>
  		</div>
  	  </header>
   </section>
+
+
+  <!-- DROP LOCATION BEFORE ADD NEW BAGEL; map -->
+
+  <section data-role="page" id="map-page">
+
+  <header data-role="header display-flex space-between" class="navbar-header">
+      <div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
+        <h1 class="nav-page-top">Drop your pin</h1>
+           <a href="#add-new">skip</a></div>
+  </header>
+
+
+  <div class="bottom-button">
+      <a href="#add-new">
+        <button type="submit">Add bagel details</button>
+      </a>
+  </div>
+
+<div data-role="main" class="map-placeholder"></div>
+
+  </section>
+
+<!-- end -->
+
+<!-- NAV PAGE EMPTY; nav-page-empty-state -->
+
+  <section data-role="page" id="nav-page-empty-state">
+
+  <header data-role="header" class="navbar-header">
+    <h1 class="nav-page-top">Elaine's Bagels</h1>
+     <a href="#profile-page">
+      <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';">
+        </a>
+  </header>
+
+<!-- SEARCH BAR  -->
+
+    <div id="search-form" class="form-control" style="margin:10px">
+         <form class="form">
+        <div class="form-control">
+          <input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
+            </div>
+         </form>
+        </div>
+<!-- end -->
+
+  <div class="page-control">
+
+  <div class="emptystate-nav-img"></div>
+
+    <div class="display-flex flex-column text-align-center">
+      <h1 class="nav-page-top">Uh oh, seems like it's empty.</h1>
+      <br>
+      <p>Had your first bagel?</p>
+        <a href="#map-page"><button>Add my first bagel</button></a>
+    </div>
+  </div>
+
+</section>
 
 
 
@@ -167,32 +259,29 @@
  	<section data-role="page" id="nav-page">
 
 <!-- PLUS BUTTON -->
-	  <a class="fixedButton" href="#add-new">
+	  <a class="fixedButton" href="#map-page">
       	<div class="roundedFixedBtn"></div>
       </a>
 <!-- end -->
 
- 	   <header data-role="header" class="navbar-header">
- 		<h1 class="nav-page-top">Elaine's Bagels</h1>
- 			<div class="image-icon profile-icon">
- 				<a href="#profile-page">icon</a>
- 			</div>
+ 	   <header data-role="header" class="display-flex space-between">
+ 		     <h1 class="nav-page-top">Elaine's Bagels</h1>
+         <div class="image-icon" id="profile-icon" onclick="window.location='#profile-page';"></div>
  	   </header>
 
 
 <!-- SEARCH BAR  -->
 
-		<div id="search-form">
+		<div id="search-form" class="form-control" style="margin:10px">
   	  	 <form class="form">
  				<div class="form-control">
  					<input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
       			</div>
-
   	     </form>
   	    </div>
 
 <!-- BAGEL LIST EXISTING -->
-		<div class="gallery-control overflow-scroll">
+		<div class="gallery-control">
    			<div class="display-grid flex-column">
    				<a href="#bagel-page"><div class="image-nav"></div></a>
    				<a href="#bagel-page"><div class="image-nav"></div></a>
@@ -223,7 +312,7 @@
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
+ 	   		<div class="image-icon chevron-left"><a href="#map-page">back</a></div>
  			<h1 class="nav-page-top">Bagel Details</h1>
  			<div class="image-icon edit"><a href="#edit-bagel">edit</a></div>
  		</header>
@@ -231,7 +320,7 @@
  		<div class="image-bagel"></div>
  	<div class="display-flex flex-column detail-text">
  		<h1>Asiago Bagel</h1>
- 		<hr>
+    <br>
  		<h3>Flavor</h3>
  		<p>Nutty</p>
  		<h3>Price</h3>
@@ -260,28 +349,16 @@
  		</header>
  	<div class="page-control">
  		<div class="align-center display-flex flex-column justify-content-center align-items-center">
- 			<div class="profile-image"></div>
+ 			<div class="profile-image"></div><br>
  			<h2>Elaine Lumanauw</h2>
  		</div>
  	</div>
- 		<hr>
-
-
- 	<!-- ul>li*6>a[href=#setting-profile> -->
- 
-<!--  		<ul>
- 			<li><a href="#setting-edit-account">Edit account</a></li>
- 			<li><a href="#setting-profile">About</a></li>
- 			<li><a href="#setting-profile">Notifications</a></li>
- 			<li><a href="#setting-profile">Get help</a></li>
- 			<li><a href="#setting-profile">Refer friends, get $10</a></li>
- 			<li><a href="#login-page">Logout</a></li>
- 		</ul> -->
+ 		<br>
 
  	<table id="settings-list">
- 		<tr>
- 			<td href="#nav-page"><div class="account-icon"></div></td>
- 			<td>Edit account</td>
+ 		<tr onclick="window.location='#edit-profile';">
+ 			<td href="#edit-profile"><div class="account-icon"></div></td>
+ 			<td>Edit Profile</td>
  			<td> > </td>
  		</tr>
  		<tr>
@@ -304,20 +381,60 @@
  			<td>About Okaybagel</td>
  			<td> > </td>
  		</tr>
- 			<tr onclick="window.location='#';">
+<!--  			<tr onclick="window.location='#';"> -->
+    <tr onclick="window.location='#list-add-animal-modal';">
  			<td href="#nav-page"><div class="account-icon"></div></td>
  			<td style="color:red">Logout</td>
  			<td> > </td>
  		</tr>
  	</table>
 
+<a href="#list-add-animal-modal"><h1>TEST LINK</h1></a>
 
 
+<!-- LOGOUT MODAL -->
+
+     <div class="modal" id="list-add-animal-modal">
+         <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
+         <div class="modal-popup">
+            <div class="modal-head">Add Animal</div>
+            <form class="modal-body overscroll" data-ajax="false">
+               <div class="form-control">
+                  <label for="#list-add-animal-name" class="form-label">name</label>
+                  <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="list-add-animal-name">
+               </div>
+               <div class="form-control">
+                  <label for="#list-add-animal-type" class="form-label">type</label>
+                  <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="list-add-animal-type">
+               </div>
+               <div class="form-control">
+                  <label for="#list-add-animal-breed" class="form-label">breed</label>
+                  <input type="text" class="form-input" placeholder="Type a Breed" data-role="none" id="list-add-animal-breed">
+               </div>
+               <div class="form-control">
+                  <label for="#list-add-animal-description" class="form-label">description</label>
+                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
+               </div>
+               <!-- <p>Nostrum quos delectus blanditiis aperiam! Fuga excepturi, quibusdam, asperiores quis culpa vel ipsum, voluptatem quas officiis a rem nesciunt voluptatum accusamus deserunt consequuntur similique delectus dicta, quod odio. Laboriosam incidunt exercitationem ipsa necessitatibus enim neque. Quisquam totam rerum quia, nobis deleniti quae, delectus hic. Consectetur laudantium quis sunt aperiam hic quidem, velit dolores praesentium sapiente. Non, architecto, quas. Eaque, modi.</p>
+               <div class="display-flex">
+                  <div class="flex-stretch"></div>
+                  <div class="flex-none"><button class="form-button">click</button></div>
+               </div> -->
+            </form>
+            <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
+               Submit
+            </div>
+         </div>
+      </div>
 
 
  	</section>
 
 <!-- end -->
+
+
+
+
 
 
 <!-- SETTING-EDIT ACCOUNT; setting-edit-account -->
@@ -343,8 +460,6 @@
 
 <!-- end -->
 
-
-
 <!-- ADD NEW BAGEL; add-new -->
 	<section data-role="page" id="add-new">
 	  <header>
@@ -355,7 +470,14 @@
   		<div class="display-flex margin-auto">
  		  <h1 class="nav-page-top">Add a new bagel</h1>
  		</div>
- 	</div>
+
+    <br>
+
+      <div class="location-confirmed display-flex space-between">
+        <p>123 Abc Rd., San Jose, CA</p>
+        <a href="#map-page"><p class="link-sub">edit pin</p></a>
+      </div>
+    </div>
 
 
 	  <div class="page-control">
@@ -380,18 +502,101 @@
       			<label for="username-existing">Rating</label>
       			<input type="text" placeholder="e.g. strawberry" id="edit-rating" data-role="none" class="form-input">
       		</div>
+    </div>
 
-
-      		<div class="form-control">
+      		<div class="form-control bottom-button">
                <a href="#nav-page" class="form-button"><button>Save</button></a>
             </div>
          </form>
-     </div>
 	</section>
 
-   <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-   <script src="lib/js/javascript.js"></script>
+
+<!-- ADD NEW BAGEL; add-new -->
+  <section data-role="page" id="edit-bagel">
+    <header>
+          <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="page-control">
+      <div class="display-flex margin-auto">
+      <h1 class="nav-page-top">Edit details</h1>
+    </div>
+
+    <br>
+
+      <div class="location-confirmed display-flex space-between">
+        <p>123 Abc Rd., San Jose, CA</p>
+        <a href="#map-page"><p class="link-sub">edit pin</p></a>
+      </div>
+    </div>
+
+
+    <div class="page-control">
+          <form id="edit-bagel-form" class="form">
+          
+          <div class="form-control">
+            <label for="username-existing">Name of bagel</label>
+            <input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Flavor</label>
+            <input type="text" placeholder="e.g. strawberry" id="edit-flavor" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Price</label>
+            <input type="text" placeholder="Everything Bagel" id="edit-price" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Rating</label>
+            <input type="text" placeholder="e.g. strawberry" id="edit-rating" data-role="none" class="form-input">
+          </div>
+    </div>
+
+          <div class="form-control bottom-button">
+               <a href="#nav-page" class="form-button"><button>Save</button></a>
+            </div>
+         </form>
+  </section>
+
+  <!-- end -->
+
+<!-- EDIT PROFILE; edit-profile -->
+
+  <section data-role="page" id="edit-profile">
+    <header>
+          <a href="#profile-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="page-control">
+      <div class="display-flex margin-auto">
+      <h1 class="nav-page-top">Edit profile</h1>
+    </div>
+
+    <br>
+          <form id="edit-profile" class="form">
+          
+          <div class="form-control">
+            <label for="username-existing">Username</label>
+            <input type="text" placeholder="Elaine Lumanauw" id="edit-username" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Password</label>
+            <input type="password" placeholder="**********" id="edit-flavor" data-role="none" class="form-input">
+          </div>
+    </div>
+
+          <div class="form-control bottom-button">
+               <a href="#profile-page" class="form-button"><button>Save</button></a>
+            </div>
+         </form>
+  </section>
+
+  <!-- end -->
+
 </body>
 </html>
 
