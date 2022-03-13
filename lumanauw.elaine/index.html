@@ -17,8 +17,8 @@
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
-   <script src="js/app.js"></script>
-   <script src="js/signin.js"></script>
+   <script src="lib/js/app.js"></script>
+   <script src="lib/js/login.js"></script>
 </head>
 
 
@@ -82,17 +82,19 @@
 
       		<h1>Welcome back!</h1>
 
-      	<form id="login-form" class="form">
+      	<form id="login-form" class="form" data-ajax="false">
+
       		<div class="form-control">
-      			<input type="text" placeholder="@username" id="login-username" data-role="none" class="form-input">
+      			<input type="text" placeholder="@username" id="welcomeback-login-username" data-role="none" class="form-input">
       		</div>
 
       		<div class="form-control">
       			<input type="password" placeholder="********" id="welcomeback-login-password" data-role="none" class="form-input">
       		</div>
       	</div>
+
       		<div class="form-control bottom-button">
-               <a href="#nav-page"><button class="form-button" type="submit">Login</button></a>
+               <button type="submit" class="form-button">Login</button>
             </div>
          </form>
       </div>
@@ -143,7 +145,7 @@
  		  <h1 class="nav-page-top">Password</h1><br>
  		   <p>What's a good password for your bagel app?</p>
 	   </div>
- 			<form id="login-form" class="form">
+ 			<form id="password-login-form" class="form">
 
  				<div class="form-control">
  					<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input"><br>
@@ -382,7 +384,7 @@
  			<td> > </td>
  		</tr>
 <!--  			<tr onclick="window.location='#';"> -->
-    <tr onclick="window.location='#list-add-animal-modal';">
+    <tr onclick="window.location='#login-page';">
  			<td href="#nav-page"><div class="account-icon"></div></td>
  			<td style="color:red">Logout</td>
  			<td> > </td>
@@ -532,7 +534,7 @@
 
 
     <div class="page-control">
-          <form id="edit-bagel-form" class="form">
+          <form id="new-bagel-form" class="form">
           
           <div class="form-control">
             <label for="username-existing">Name of bagel</label>
@@ -541,7 +543,7 @@
 
           <div class="form-control">
             <label for="username-existing">Flavor</label>
-            <input type="text" placeholder="e.g. strawberry" id="edit-flavor" data-role="none" class="form-input">
+            <input type="text" placeholder="e.g. strawberry" id="new-flavor" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
@@ -585,7 +587,7 @@
 
           <div class="form-control">
             <label for="username-existing">Password</label>
-            <input type="password" placeholder="**********" id="edit-flavor" data-role="none" class="form-input">
+            <input type="password" placeholder="**********" id="edit-password-2" data-role="none" class="form-input">
           </div>
     </div>
 
