@@ -33,7 +33,7 @@
 
     <p class="margin-auto text-align-center" id="subheading">OR</p>
 
-			<a href="#login-page"><button class="full login-button">I have an account</button></a>
+			<a href="#login-page"><button class="button-outline">I have an account</button></a>
 		</div>
 	</section>
 
@@ -75,7 +75,6 @@
 
   <section data-role="page" id="login-page">
       <div data-role="main">
-
       <div class="image-logo"></div>
 
       <div class="page-control">
@@ -95,6 +94,7 @@
 
       		<div class="form-control bottom-button">
                <button type="submit" class="form-button">Login</button>
+               <a href="#onboarding-1"><p id="subheading" style="text-align:right">Create a new account</p></a>
             </div>
          </form>
       </div>
@@ -384,50 +384,28 @@
  			<td> > </td>
  		</tr>
 <!--  			<tr onclick="window.location='#';"> -->
-    <tr onclick="window.location='#login-page';">
+    <tr>
  			<td href="#nav-page"><div class="account-icon"></div></td>
- 			<td style="color:red">Logout</td>
+ 			<td style="color:red"><a href="#" data-activate="#logout-modal">Logout</a></td>
  			<td> > </td>
  		</tr>
  	</table>
 
-<a href="#list-add-animal-modal"><h1>TEST LINK</h1></a>
-
+<!-- 
+  <a href="#" data-activate="#logout-modal" style=''>Logout</a> -->
 
 <!-- LOGOUT MODAL -->
 
-     <div class="modal" id="list-add-animal-modal">
-         <div class="modal-back" data-deactivate="#list-add-animal-modal"></div>
+     <div class="modal" id="logout-modal">
+         <div class="modal-back" data-deactivate="#logout-modal"></div>
          <div class="modal-popup">
-            <div class="modal-head">Add Animal</div>
-            <form class="modal-body overscroll" data-ajax="false">
-               <div class="form-control">
-                  <label for="#list-add-animal-name" class="form-label">name</label>
-                  <input type="text" class="form-input" placeholder="Type a Name" data-role="none" id="list-add-animal-name">
-               </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-type" class="form-label">type</label>
-                  <input type="text" class="form-input" placeholder="Type a Type" data-role="none" id="list-add-animal-type">
-               </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-breed" class="form-label">breed</label>
-                  <input type="text" class="form-input" placeholder="Type a Breed" data-role="none" id="list-add-animal-breed">
-               </div>
-               <div class="form-control">
-                  <label for="#list-add-animal-description" class="form-label">description</label>
-                  <input type="text" class="form-input" placeholder="Type a Description" data-role="none" id="list-add-animal-description">
-               </div>
-               <!-- <p>Nostrum quos delectus blanditiis aperiam! Fuga excepturi, quibusdam, asperiores quis culpa vel ipsum, voluptatem quas officiis a rem nesciunt voluptatum accusamus deserunt consequuntur similique delectus dicta, quod odio. Laboriosam incidunt exercitationem ipsa necessitatibus enim neque. Quisquam totam rerum quia, nobis deleniti quae, delectus hic. Consectetur laudantium quis sunt aperiam hic quidem, velit dolores praesentium sapiente. Non, architecto, quas. Eaque, modi.</p>
-               <div class="display-flex">
-                  <div class="flex-stretch"></div>
-                  <div class="flex-none"><button class="form-button">click</button></div>
-               </div> -->
-            </form>
-            <div class="modal-foot" style="text-align:right" data-deactivate="#list-add-animal-modal">
-               Submit
-            </div>
+            <div class="modal-head text-align-center">Are you sure you want to logout?
+          <div class="display-flex flex-column" style="padding-top:10px;">
+         <a href="#profile-page" data-deactivate="#logout-modal"><button>Nah, just kidding</button></a>
+         <a href="#login-page" class="js-logout"><button class="button-outline">Yup, log me out</button></a>
          </div>
-      </div>
+          </div>
+
 
 
  	</section>
