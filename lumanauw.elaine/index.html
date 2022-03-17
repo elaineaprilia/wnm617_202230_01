@@ -40,7 +40,10 @@
 <!-- ONBOARDING 1; onboarding-1 -->
 
 <section data-role="page" id="onboarding-1">
-  <a href="#signup-page"><header style="float:right">skip</header></a>
+  <header class="display-flex space-between">
+    <div class="image-icon" id="chevron-left"  onclick="window.location='#welcome-page';"></div>
+    <p onclick="window.location='#signup-page';">skip</p>
+  </header>
   <div class="onboarding-img-1"></div>
 
   <div class="page-control">
@@ -57,7 +60,9 @@
 <!-- ONBOARDING 2; onboarding-2 -->
 
 <section data-role="page" id="onboarding-2">
-  <a href="#signup-page"><header style="float:right">skip</header></a>
+  <header class="display-flex space-between">
+    <a href="#onboarding-1"><div class="image-icon" id="chevron-left"></div></a>
+  </header>
   <div class="onboarding-img-1"></div>
 
   <div class="page-control">
@@ -83,6 +88,7 @@
 
       	<form id="login-form" class="form" data-ajax="false">
 
+
       		<div class="form-control">
       			<input type="text" placeholder="@username" id="welcomeback-login-username" data-role="none" class="form-input">
       		</div>
@@ -90,13 +96,18 @@
       		<div class="form-control">
       			<input type="password" placeholder="********" id="welcomeback-login-password" data-role="none" class="form-input">
       		</div>
+
+          <div id="wrongCredentials"></div>
+
       	</div>
 
       		<div class="form-control bottom-button">
                <button type="submit" class="form-button">Login</button>
+
                <a href="#onboarding-1"><p id="subheading" style="text-align:right">Create a new account</p></a>
             </div>
          </form>
+
       </div>
    </section>
 
@@ -121,7 +132,13 @@
  			<form id="setup-username" class="form">
  				<div class="form-control">
  					<input type="text" placeholder="@username" id="signup-username" data-role="none" class="form-input">
-      			</div>
+      			</div><br>
+
+       <p>What should we call you?</p>
+
+        <div class="form-control">
+          <input type="text" placeholder="Mr. Bagel" id="signup-fullname" data-role="none" class="form-input">
+            </div>
     </div>
       		    <div class="bottom-button">
                		<a href="#password-page"><button>next</button></a>
@@ -219,8 +236,8 @@
 
   <section data-role="page" id="nav-page-empty-state">
 
-  <header data-role="header" class="navbar-header">
-    <h1 class="nav-page-top">Elaine's Bagels</h1>
+  <header class="display-flex flex-row space-between">
+    <h1>Elaine's Bagels</h1>
      <a href="#profile-page">
       <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';">
         </a>
@@ -261,23 +278,23 @@
  	<section data-role="page" id="nav-page">
 
 <!-- PLUS BUTTON -->
-	  <a class="fixedButton" href="#map-page">
-      	<div class="roundedFixedBtn"></div>
-      </a>
+	  <a href="#map-page"><span class="fixedButton">
+      	<div class="roundedFixedBtn">+</div></a></span>
 <!-- end -->
 
- 	   <header data-role="header" class="display-flex space-between">
- 		     <h1 class="nav-page-top">Elaine's Bagels</h1>
-         <div class="image-icon" id="profile-icon" onclick="window.location='#profile-page';"></div>
- 	   </header>
-
+  <header class="display-flex flex-row space-between">
+    <h1>Elaine's Bagels</h1>
+     <a href="#profile-page">
+      <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';">
+        </a>
+  </header>
 
 <!-- SEARCH BAR  -->
 
 		<div id="search-form" class="form-control" style="margin:10px">
   	  	 <form class="form">
  				<div class="form-control">
- 					<input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
+ 					<input type="text" placeholder="search..." id="search-bagel" data-role="none" class="form-input">
       			</div>
   	     </form>
   	    </div>
@@ -342,20 +359,39 @@
 
 
 <!-- PROFILE PAGE; profile-page-->
-
  	<section data-role="page" id="profile-page">
+
+
+  <div class="background-image-overlay">
+
 	  <header>
 	  		  <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
 	  </header>
 
- 		</header>
  	<div class="page-control">
+
  		<div class="align-center display-flex flex-column justify-content-center align-items-center">
- 			<div class="profile-image"></div><br>
- 			<h2>Elaine Lumanauw</h2>
+ 			<div class="profile-image"></div>
+
+  <a href="#" data-activate="#edit-profilepic"><img src="lib/icon/edit-profilepic.png" id="edit-profilepic-img" /></a>
+
+ 			<h2>@elainelumanauw</h2>
+
+      <div class="card">
+        <div class="display-flex flex-column">
+          <div class="display-flex flex-row space-between">
+          <p>Bagels eaten</p>
+          <p>300</p>
+          </div>
+          <div class="display-flex flex-row space-between">
+          <p>Days logged</p>
+          <p>200</p>
+          </div>
+        </div>
+      </div>
  		</div>
  	</div>
- 		<br>
+
 
  	<table id="settings-list">
  		<tr onclick="window.location='#edit-profile';">
@@ -363,26 +399,19 @@
  			<td>Edit Profile</td>
  			<td> > </td>
  		</tr>
- 		<tr>
- 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 		<tr onclick="window.location='#about-okaybagel';">
+ 			<td href="#about-okaybagel"><div class="account-icon"></div></td>
  			<td>About Okaybagel</td>
  			<td> > </td>
  		</tr>
- 			<tr onclick="window.location='#';">
- 			<td href="#nav-page"><div class="account-icon"></div></td>
- 			<td>Notifications</td>
+ 			<tr onclick="window.location='#notifications-page';">
+ 			<td href="#notifications-page"><div class="account-icon"></div></td>
+ 			<td>Display mode & notifications</td>
  			<td> > </td>
  		</tr>
- 		<tr>
- 			<td href="#nav-page"><div class="account-icon"></div></td>
- 			<td>Edit account</td>
- 			<td> > </td>
- 		</tr>
- 		<tr>
- 			<td href="#nav-page"><div class="account-icon"></div></td>
- 			<td>About Okaybagel</td>
- 			<td> > </td>
- 		</tr>
+      <tr onclick="window.location='#notifications-page';">
+    </tr>
+
 <!--  			<tr onclick="window.location='#';"> -->
     <tr>
  			<td href="#nav-page"><div class="account-icon"></div></td>
@@ -391,8 +420,6 @@
  		</tr>
  	</table>
 
-<!-- 
-  <a href="#" data-activate="#logout-modal" style=''>Logout</a> -->
 
 <!-- LOGOUT MODAL -->
 
@@ -405,9 +432,22 @@
          <a href="#login-page" class="js-logout"><button class="button-outline">Yup, log me out</button></a>
          </div>
           </div>
+        </div>
+      </div>
 
+<!-- EDIT PROFPIC MODAL -->
 
-
+     <div class="modal" id="edit-profilepic">
+         <div class="modal-back" data-deactivate="#edit-profilepic"></div>
+         <div class="modal-popup">
+          <div class="modal-head text-align-center">
+        <div class="modal-head text-align-center">Edit profile image
+           <div class="display-flex flex-column" style="padding-top:10px;">
+         <a href="#profile-page" data-deactivate="#logout-modal"><button>Upload from gallery</button></a>
+         <a href="#login-page" class="js-logout"><button class="button-outline">Cancel</button></a>
+         </div>
+        </div>
+        </div>
  	</section>
 
 <!-- end -->
@@ -465,7 +505,19 @@
       		
       		<div class="form-control">
       		  <label for="username-existing">Name of bagel</label>
-      			<input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input">
+
+<!--       			<input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input"> -->
+
+            <select id="username-existing" name="bagel" data-role="none">
+              <option selected="selected" value="Everything Bagel" data-role="none"></option>
+              <option value="Plain Bagel">Plain Bagel</option>
+              <option value="Sesame Bagel">Sesame Bagel</option>
+              <option value="Strawberry Bagel">Strawberry Bagel</option>
+              <option value="Cheese Bagel">Cheese Bagel</option>
+              <option value="Spinach Bagel">Spinach Bagel</option>
+              <option value="Other">Other</option>
+            </select>
+
       		</div>
 
       		<div class="form-control">
@@ -516,7 +568,7 @@
           
           <div class="form-control">
             <label for="username-existing">Name of bagel</label>
-            <input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input">
+            <input type="text" placeholder="Everything Bagel" id="new-bagelname" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
@@ -526,12 +578,12 @@
 
           <div class="form-control">
             <label for="username-existing">Price</label>
-            <input type="text" placeholder="Everything Bagel" id="edit-price" data-role="none" class="form-input">
+            <input type="text" placeholder="Everything Bagel" id="edit-name-of-bagel" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
             <label for="username-existing">Rating</label>
-            <input type="text" placeholder="e.g. strawberry" id="edit-rating" data-role="none" class="form-input">
+            <input type="text" placeholder="e.g. strawberry" id="new-rating" data-role="none" class="form-input">
           </div>
     </div>
 
@@ -560,12 +612,17 @@
           
           <div class="form-control">
             <label for="username-existing">Username</label>
-            <input type="text" placeholder="Elaine Lumanauw" id="edit-username" data-role="none" class="form-input">
+            <input type="text" value="elainelumanauw" id="new-username" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
             <label for="username-existing">Password</label>
-            <input type="password" placeholder="**********" id="edit-password-2" data-role="none" class="form-input">
+            <input type="password" value="**********" id="edit-password-2" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Name</label>
+            <input type="text" value="Elaine" id="edit-name-2" data-role="none" class="form-input">
           </div>
     </div>
 
@@ -573,9 +630,68 @@
                <a href="#profile-page" class="form-button"><button>Save</button></a>
             </div>
          </form>
+
   </section>
 
   <!-- end -->
+
+
+<!-- NOTIFICATIONS; notifications-page -->
+<section data-role="page" id="notifications-page">
+
+    <header>
+          <a href="#profile-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="page-control">
+      <div class="display-flex margin-auto">
+      <h1 class="nav-page-top">Notification settings</h1>
+    </div>
+    <br>
+    <div class="display-flex space-between">
+     <p>Enable push notifications</p>
+     <div"><input type="checkbox" data-role="none" class="checkbox"></div>  
+    <br>
+    <button onclick="myFunction()">Toggle mode</button>
+
+     </div>
+    </div>
+</section>
+
+
+<!-- ABOUT OKAYBAGEL -->
+<section data-role="page" id="about-okaybagel">
+    <header>
+          <a href="#profile-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="page-control display-flex flex-column">
+      <h1 class="nav-page-top">About</h1>
+    <br>
+    <h2>Terms of use</h2>
+    <br>
+    <p style="color:var(--90black)">Please note that your use of and access to our services are subject to the following terms. If you do not agree to all of the following, you may not use or access the services in any manner.
+    <br>
+    Effective date: March 16, 2022
+    <br>
+    Welcome to OKAYBAGEL, providets its services to you ("you") through the individual named Elaine Lumanauw. Included is just a silly app where you can track all your bagel counts.</p>
+    <br>
+    <h2>Privacy policy</h2>
+    <br>
+    <p>We take the privacy of our users not too seriously.<br>
+    Our services is not directed to serious users who are at all ages. OKAYBAGEL does not knowingly collect personal data because we don't care that much. Ha. But if you're a concerned user who thinks the privacy policy could be better, feel free to send us an email.</p><br>
+    YOU HEREBY AGREE THAT, BEFORE USING THE SERVICES, YOU ADHERE TO THE FACT THAT THIS APP IS A SCHOOL PROJECT WITH NO INTENT OF ANY SORT. YOU DON NOT HAVE TO CONSULT YOUR PHYSICIAN.
+    <br>
+    OKAYBAGEL is a product made and coded by Elaine Lumanauw. I'm a UI/UX Designer and not a software engineer ok
+    <br><br><br>
+
+  </div>
+  </section>
+
+
+
+
+</section>
 
 </body>
 </html>

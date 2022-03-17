@@ -1,4 +1,3 @@
-
 const checkLoginForm = () => {
    let user = $("#welcomeback-login-username").val();
    let pass = $("#welcomeback-login-password").val();
@@ -14,6 +13,7 @@ const checkLoginForm = () => {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
+      document.getElementById("wrongCredentials").innerHTML = "<p style='color:red' id='subheading'>Whoops, it looks like your username or password is wrong. Try again.</p>";
    }
 
    checkUserId();
@@ -32,3 +32,8 @@ const checkUserId = () => {
          $.mobile.navigate("#nav-page");
    }
 }
+
+function dontGo(event) {
+    event.preventDefault();
+}
+

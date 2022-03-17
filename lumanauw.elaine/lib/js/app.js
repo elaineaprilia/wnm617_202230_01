@@ -33,8 +33,18 @@ $(() => {
       $(target).toggleClass("active")
    })
    .on("click", "[data-activateone]", function() {
-      let target = $(this).data("activate");
+      let target = $(this).data("activateone");
       $(target).addClass("active")
          .siblings().removeClass("active")
    })
-});
+
+})
+
+
+
+//TOGGLE LIGHT DARK//
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+};
