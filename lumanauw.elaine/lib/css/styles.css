@@ -14,19 +14,6 @@
 @import url("css/styles.css");
 
 
-/*STICKY*/
-/*
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-*/
-.sticky + .gallery-control {
-  padding-top: 60px;
-}
-
-
 
 header{
     padding: 20px;
@@ -80,9 +67,6 @@ a{
 	margin: 0 !important;
 }
 
-.detail-text{
-	margin: 10px;
-}
 
 .splash-button{
     width: 90%;
@@ -104,7 +88,9 @@ a{
 }
 
 .gallery-control{
-
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
 }
 
 
@@ -124,11 +110,61 @@ option{
 
 /*BAGEL IMAGE LIST*/
 
-.image-nav{
+.image-nav-1{
     width: 172px;
     height: 172px;
     border-radius: 10px;
-    background-image: url(https://via.placeholder.com/180);
+    background-image: url(../img/bagel/bagel1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-nav-2{
+    width: 172px;
+    height: 172px;
+    border-radius: 10px;
+    background-image: url(../img/bagel/bagel2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-nav-3{
+    width: 172px;
+    height: 172px;
+    border-radius: 10px;
+    background-image: url(../img/bagel/bagel3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-nav-4{
+    width: 172px;
+    height: 172px;
+    border-radius: 10px;
+    background-image: url(../img/bagel/bagel4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-nav-5{
+    width: 172px;
+    height: 172px;
+    border-radius: 10px;
+    background-image: url(../img/bagel/bagel5.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.image-nav-6{
+    width: 172px;
+    height: 172px;
+    border-radius: 10px;
+    background-image: url(../img/bagel/bagel6.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -206,8 +242,6 @@ button{
 }
 
 
-
-
 /*IMG*/
 
 .welcome-back-img{
@@ -221,15 +255,15 @@ button{
 }
 
 .background-image-overlay{
-    background-image: url(../img/background-orange.png);
+    background-image: url(../img/welcome-back.png);
     background-repeat: no-repeat;    
     background-attachment: fixed;
 }
 
 .onboarding-img-1{
     width: 100%;
-    height: 400px;
-    background-image: url(../img/onboarding1.gif);
+    height: 300px;
+    background-image: url(../img/c2.gif);
     image-rendering:  -webkit-optimize-contrast;
     background-position: center;
     background-size: cover;
@@ -238,8 +272,8 @@ button{
 
 .onboarding-img-2{
     width: 100%;
-    height: 400px;
-    background-image: url(../img/onboarding-1.jpg);
+    height: 300px;
+    background-image: url(../img/c1.gif);
     image-rendering:  -webkit-optimize-contrast;
     background-position: center;
     background-size: cover;
@@ -257,9 +291,9 @@ button{
 }
 
 .image-bagel{
-    height: 200px;
+    height: 300px;
 /*    border-radius: 10px;*/
-    background-image: url(https://via.placeholder.com/400);
+    background-image: url(../img/bagel/bagel1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -273,8 +307,6 @@ button{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
-
 }
 
 .splash-welcome-page{
@@ -396,6 +428,53 @@ input{
 
 /*ICONS*/
 
+
+.pin{
+    width: 38px;
+    height: 38px;
+    position: absolute;
+
+    top: 50%;
+    left: 40%;
+}
+
+
+.profileicon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../icon/profile2-icon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.abouticon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../icon/about-icon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.displayicon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../icon/phone-icon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
+.logouticon{
+    width: 30px;
+    height: 30px;
+    background-image: url(../icon/logout-icon.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat; 
+}
+
 #pin-icon{
     width: 35px;
     height: 35px;
@@ -435,10 +514,6 @@ input{
     display: grid;
     grid-template-columns: repeat(2, 0fr);
     gap: 8px;
-    justify-content: space-evenly;
-    justify-items: center;
-    align-content: space-evenly;
-    align-items: center;
 }
 
 table tr td:nth-child(3) {

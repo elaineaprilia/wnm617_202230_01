@@ -63,10 +63,11 @@
   <header class="display-flex space-between">
     <a href="#onboarding-1"><div class="image-icon" id="chevron-left"></div></a>
   </header>
-  <div class="onboarding-img-1"></div>
+  <div class="onboarding-img-2">
+  </div>
 
   <div class="page-control">
-    <h3 class="text-align-center">Look back at your the best bagels.</h3>
+    <h3 class="text-align-center">Look back at the best bagels.</h3>
     <p class="text-align-center">Want to relive your best bagel experiences? Well, just type and search.</p>
   </div>
 
@@ -80,7 +81,7 @@
 
   <section data-role="page" id="login-page">
       <div data-role="main">
-      <div class="image-logo"></div>
+      <div class="welcome-back-img"></div>
 
       <div class="page-control">
 
@@ -189,7 +190,7 @@
 
   <section data-role="page" id="confirmation-signup-page">
 
-		<div class="splash-welcome-page"></div>
+		<div class="welcome-back-img"></div>
 
 		<div class="page-control">
   			<div class="display-flex flex-column">
@@ -209,7 +210,7 @@
   </section>
 
 
-  <!-- DROP LOCATION BEFORE ADD NEW BAGEL; map -->
+  <!-- DROP LOCATION BEFORE ADD NEW BAGEL; map-page -->
 
   <section data-role="page" id="map-page">
 
@@ -225,6 +226,8 @@
         <button type="submit">Add bagel details</button>
       </a>
   </div>
+
+<img src="lib/icon/location-pin.png" class="pin">
 
 <div data-role="main" class="map-placeholder"></div>
 
@@ -302,20 +305,19 @@
 <!-- BAGEL LIST EXISTING -->
 		<div class="gallery-control">
    			<div class="display-grid flex-column">
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
-   				<a href="#bagel-page"><div class="image-nav"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-1"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-2"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-3"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-4"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-5"></div></a>
+   				<a href="#bagel-page"><div class="image-nav-6"></div></a>
+          <a href="#bagel-page"><div class="image-nav-1"></div></a>
+          <a href="#bagel-page"><div class="image-nav-4"></div></a>
+          <a href="#bagel-page"><div class="image-nav-2"></div></a>
+          <a href="#bagel-page"><div class="image-nav-3"></div></a>
+          <a href="#bagel-page"><div class="image-nav-6"></div></a>
+          <a href="#bagel-page"><div class="image-nav-1"></div></a>
+          <a href="#bagel-page"><div class="image-nav-5"></div></a>
    			</div>
    		</div>
    	</div>
@@ -331,13 +333,16 @@
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a href="#map-page">back</a></div>
+ 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
  			<h1 class="nav-page-top">Bagel Details</h1>
  			<div class="image-icon edit"><a href="#edit-bagel">edit</a></div>
  		</header>
 
  		<div class="image-bagel"></div>
- 	<div class="display-flex flex-column detail-text">
+
+    <div class="page-control" style="transform: translate(0, -100px); !important">
+    <div class="card" style="width:auto !important;margin:0 !important;padding-bottom: 20px; !important;">
+ 	<div class="display-flex flex-column">
  		<h1>Asiago Bagel</h1>
     <br>
  		<h3>Flavor</h3>
@@ -346,8 +351,14 @@
  		<p>$4.25</p>
  		<h3>Rating</h3>
  		<p>Hella gooooood</p>
-
+    <div class="map-details"> 
+<div data-role="main" class="map-placeholder" style="height:100px !important; border-radius:10px;">
+    <img src="lib/icon/location-pin.png" class="pin" style="transform:translate(0,120px);">
+</div>
+</div>
+  </div>
  	</div>
+ </div>
 	</section>
 
 
@@ -395,17 +406,17 @@
 
  	<table id="settings-list">
  		<tr onclick="window.location='#edit-profile';">
- 			<td href="#edit-profile"><div class="account-icon"></div></td>
- 			<td>Edit Profile</td>
+ 			<td href="#edit-profile"><div class="profileicon"></div></td>
+ 			<td>Edit profile</td>
  			<td> > </td>
  		</tr>
  		<tr onclick="window.location='#about-okaybagel';">
- 			<td href="#about-okaybagel"><div class="account-icon"></div></td>
+ 			<td href="#about-okaybagel"><div class="abouticon"></div></td>
  			<td>About Okaybagel</td>
  			<td> > </td>
  		</tr>
  			<tr onclick="window.location='#notifications-page';">
- 			<td href="#notifications-page"><div class="account-icon"></div></td>
+ 			<td href="#notifications-page"><div class="displayicon"></div></td>
  			<td>Display mode & notifications</td>
  			<td> > </td>
  		</tr>
@@ -414,7 +425,7 @@
 
 <!--  			<tr onclick="window.location='#';"> -->
     <tr>
- 			<td href="#nav-page"><div class="account-icon"></div></td>
+ 			<td href="#nav-page"><div class="logouticon"></div></td>
  			<td style="color:red"><a href="#" data-activate="#logout-modal">Logout</a></td>
  			<td> > </td>
  		</tr>
@@ -483,7 +494,7 @@
 <!-- ADD NEW BAGEL; add-new -->
 	<section data-role="page" id="add-new">
 	  <header>
-	  		  <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+	  		  <a href="#map-page"><div class="image-icon" id="chevron-left"></div></a>
 	  </header>
 
 	  <div class="page-control">
@@ -527,23 +538,44 @@
 
       		<div class="form-control">
       		  <label for="username-existing">Price</label>
-      			<input type="text" placeholder="Everything Bagel" id="edit-price" data-role="none" class="form-input">
+      			<input type="text" placeholder="$100.00" id="edit-price" data-role="none" class="form-input">
       		</div>
 
       		<div class="form-control">
       			<label for="username-existing">Rating</label>
-      			<input type="text" placeholder="e.g. strawberry" id="edit-rating" data-role="none" class="form-input">
+      			<input type="text" placeholder="5 stars? 5 golden diamonds?" id="edit-rating" data-role="none" class="form-input">
       		</div>
+
+          <a href="#" data-activate="#modal-bagel-image"><button class="button-outline">+Add bagel image</button>
+
     </div>
 
       		<div class="form-control bottom-button">
                <a href="#nav-page" class="form-button"><button>Save</button></a>
             </div>
          </form>
+
+<!-- BAGEL IMAGE MODAL -->
+
+     <div class="modal" id="modal-bagel-image">
+         <div class="modal-back" data-deactivate="#modal-bagel-image"></div>
+         <div class="modal-popup">
+          <div class="modal-head text-align-center">
+        <div class="modal-head text-align-center">Upload bagel image
+           <div class="display-flex flex-column" style="padding-top:10px;">
+
+         <a href="#" data-deactivate="#modal-bagel-image"><button>Upload from gallery</button></a>
+
+         <a href="#login-page" class="js-logout"><button class="button-outline">Cancel</button></a>
+         </div>
+        </div>
+        </div>
+
 	</section>
 
 
-<!-- ADD NEW BAGEL; add-new -->
+
+<!-- EDIT-EXISTING BAGEL -->
   <section data-role="page" id="edit-bagel">
     <header>
           <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
@@ -565,25 +597,32 @@
 
     <div class="page-control">
           <form id="new-bagel-form" class="form">
-          
-          <div class="form-control">
-            <label for="username-existing">Name of bagel</label>
-            <input type="text" placeholder="Everything Bagel" id="new-bagelname" data-role="none" class="form-input">
+         <label for="edit-existing-bagel">Name of bagel</label>       
+          <div class="form-control" data-role="none">
+            <select id="edit-existing-bagel" name="bagel" data-role="none">
+              <option selected="selected" value="Everything Bagel" data-role="none"></option>
+              <option value="Plain Bagel" selected>Asiago Bagel</option>
+              <option value="Sesame Bagel">Sesame Bagel</option>
+              <option value="Strawberry Bagel">Strawberry Bagel</option>
+              <option value="Cheese Bagel">Cheese Bagel</option>
+              <option value="Spinach Bagel">Spinach Bagel</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           <div class="form-control">
-            <label for="username-existing">Flavor</label>
-            <input type="text" placeholder="e.g. strawberry" id="new-flavor" data-role="none" class="form-input">
+            <label for="edit-existing-bagel">Flavor</label>
+            <input type="text" value="Nutty" id="new-flavor" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
-            <label for="username-existing">Price</label>
-            <input type="text" placeholder="Everything Bagel" id="edit-name-of-bagel" data-role="none" class="form-input">
+            <label for="edit-existing-bagel">Price</label>
+            <input type="text" value="$4.25" id="edit-name-of-bagel" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
-            <label for="username-existing">Rating</label>
-            <input type="text" placeholder="e.g. strawberry" id="new-rating" data-role="none" class="form-input">
+            <label for="edit-existing-bagel">Rating</label>
+            <input type="text" value="Hella gooooood" id="new-rating" data-role="none" class="form-input">
           </div>
     </div>
 
