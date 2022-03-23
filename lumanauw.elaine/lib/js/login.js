@@ -4,7 +4,7 @@ const checkLoginForm = () => {
 
    console.log(user,pass)
 
-   if (user === 'elaine' && pass === 'pass') {
+   if (user === 'user' && pass === 'pass') {
       // logged in
       console.log('success');
       sessionStorage.userId = 3;
