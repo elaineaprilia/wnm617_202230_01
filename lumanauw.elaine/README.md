@@ -1,4 +1,4 @@
-# Elaine Lumanauw ✨
+# Elaine Lumanauw ✨🧋
 
 **About** 
 Repositories of projects @ AAU's UxD class

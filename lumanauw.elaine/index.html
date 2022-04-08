@@ -240,17 +240,26 @@
   <section data-role="page" id="nav-page-empty-state">
 
   <header class="display-flex flex-row space-between">
+    
     <h1>Elaine's Bagels</h1>
-     <a href="#profile-page">
-      <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';">
+     
+      <div class="display-flex flex-row">
+
+          <div class="image-icon" id="moon-icon" onclick="myFunction()"></div>
+
+
+         <a href="#profile-page">
+          <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';"></div>
         </a>
+
+      </div>
   </header>
 
 <!-- SEARCH BAR  -->
 
     <div id="search-form" class="form-control" style="margin:10px">
          <form class="form">
-        <div class="form-control">
+        <div class="form-control-search">
           <input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
             </div>
          </form>
@@ -276,54 +285,8 @@
 <!-- end -->
 
 
+
 <!-- NAV PAGE; nav-page -->
-
- 	<section data-role="page" id="nav-page">
-
-<!-- PLUS BUTTON -->
-	  <a href="#map-page"><span class="fixedButton">
-      	<div class="roundedFixedBtn">+</div></a></span>
-<!-- end -->
-
-  <header class="display-flex flex-row space-between">
-    <h1>Elaine's Bagels</h1>
-     <a href="#profile-page">
-      <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';">
-        </a>
-  </header>
-
-<!-- SEARCH BAR  -->
-
-		<div id="search-form" class="form-control" style="margin:10px">
-  	  	 <form class="form">
- 				<div class="form-control">
- 					<input type="text" placeholder="search..." id="search-bagel" data-role="none" class="form-input">
-      			</div>
-  	     </form>
-  	    </div>
-
-<!-- BAGEL LIST EXISTING -->
-		<div class="gallery-control">
-   			<div class="display-grid flex-column">
-   				<a href="#bagel-page"><div class="image-nav-1"></div></a>
-   				<a href="#bagel-page"><div class="image-nav-2"></div></a>
-   				<a href="#bagel-page"><div class="image-nav-3"></div></a>
-   				<a href="#bagel-page"><div class="image-nav-4"></div></a>
-   				<a href="#bagel-page"><div class="image-nav-5"></div></a>
-   				<a href="#bagel-page"><div class="image-nav-6"></div></a>
-          <a href="#bagel-page"><div class="image-nav-1"></div></a>
-          <a href="#bagel-page"><div class="image-nav-4"></div></a>
-          <a href="#bagel-page"><div class="image-nav-2"></div></a>
-          <a href="#bagel-page"><div class="image-nav-3"></div></a>
-          <a href="#bagel-page"><div class="image-nav-6"></div></a>
-          <a href="#bagel-page"><div class="image-nav-1"></div></a>
-          <a href="#bagel-page"><div class="image-nav-5"></div></a>
-   			</div>
-   		</div>
-   	</div>
-   		</section>
-<!-- end -->
-
 
 
 
@@ -368,10 +331,8 @@
 
 
 
-
 <!-- PROFILE PAGE; profile-page-->
  	<section data-role="page" id="profile-page">
-
 
   <div class="background-image-overlay">
 
@@ -489,6 +450,14 @@
          </form>
 </section>	
 
+
+
+
+
+
+
+
+
 <!-- end -->
 
 <!-- ADD NEW BAGEL; add-new -->
@@ -546,7 +515,7 @@
       			<input type="text" placeholder="5 stars? 5 golden diamonds?" id="edit-rating" data-role="none" class="form-input">
       		</div>
 
-          <a href="#" data-activate="#modal-bagel-image"><button class="button-outline">+Add bagel image</button>
+          <a href="#" data-activate="#modal-bagel-image"><button class="button-outline">+Add bagel image</button></a>
 
     </div>
 
@@ -731,6 +700,103 @@
 
 
 </section>
+
+
+<section data-role="page" id="nav-page">
+
+<!-- PLUS AND NAV BUTTON -->
+
+    <a href="#map-page"><span class="fixedButton">
+        <div class="roundedFixedBtn">+</div></a></span>
+<!-- end -->
+
+  <header class="display-flex flex-row space-between">
+    <h1>Elaine's Bagels</h1>
+    
+      <div class="display-flex flex-row">
+
+          <div class="image-icon" id="moon-icon" onclick="myFunction()"></div>
+
+          
+         <a href="#profile-page">
+          <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';"></div>
+        </a>
+
+  </header>
+
+
+<!-- TABS -->
+
+<div class="tab-control">
+<button class="tablink" onclick="openPage('Map', this, 'red')" style='color:var(--black) !important;'>Map</button>
+<button class="tablink" onclick="openPage('Gallery', this, 'orange')"  style='color:var(--black);' id="defaultOpen">Gallery</button>
+</div>
+
+<!-- end -->
+
+<!-- MAP GOES HERE -->
+
+  <div id="Map" class="tabcontent">
+  <div class="map-page-control">
+    <div class="map-placeholder"></div>
+  </div>
+  </div>
+
+
+<!-- BAGEL GALLERY LIST GOES HERE -->
+
+  <div id="Gallery" class="tabcontent" style="padding-top:0 !important">
+
+
+<form class="form">
+  <div class="form-control-search">
+          <input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
+  </div>
+ </form>
+
+
+    <div class="gallery-control">
+        <div class="display-grid flex-column">
+          <a href="#bagel-page"><div class="image-nav-1"></div></a>
+          <a href="#bagel-page"><div class="image-nav-2"></div></a>
+          <a href="#bagel-page"><div class="image-nav-3"></div></a>
+          <a href="#bagel-page"><div class="image-nav-4"></div></a>
+          <a href="#bagel-page"><div class="image-nav-5"></div></a>
+          <a href="#bagel-page"><div class="image-nav-6"></div></a>
+          <a href="#bagel-page"><div class="image-nav-1"></div></a>
+          <a href="#bagel-page"><div class="image-nav-4"></div></a>
+          <a href="#bagel-page"><div class="image-nav-2"></div></a>
+          <a href="#bagel-page"><div class="image-nav-3"></div></a>
+          <a href="#bagel-page"><div class="image-nav-6"></div></a>
+          <a href="#bagel-page"><div class="image-nav-1"></div></a>
+          <a href="#bagel-page"><div class="image-nav-5"></div></a>
+        </div>
+      </div>
+    </div>   
+
+  </div>
+
+
+
+<script>
+function openPage(pageName,elmnt,color) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].style.backgroundColor = "<style>var(--primarycolor)</style>";
+  }
+  document.getElementById(pageName).style.display = "block";
+  elmnt.style.backgroundColor = "";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
 
 </body>
 </html>
