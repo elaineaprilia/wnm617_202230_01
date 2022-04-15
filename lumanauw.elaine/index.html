@@ -16,46 +16,53 @@
    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600&display=swap" rel="stylesheet">
 
    <script src="lib/js/jquery-2.2.4.min.js"></script>
-   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
    <script src="lib/js/app.js"></script>
    <script src="lib/js/login.js"></script>
+   <script src="lib/js/functions.js"></script>
+   <script src="lib/js/pages.js"></script>
+   <script src="lib/js/parts.js"></script>
+
+   <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 </head>
 
 
 <body>
 
 <!-- WELCOME PAGE; welcome-page -->
-	<section data-role="page" id="welcome-page">
+<section data-role="page" id="welcome-page">
   <div class="splash-welcome-page"></div>
-		<div class="splash-button">
-
+	  <div class="splash-button">
       <a href="#onboarding-1"><button class="full signup-button">I'm new here!</button></a>
-
-    <p class="margin-auto text-align-center" id="subheading">OR</p>
-
-			<a href="#login-page"><button class="button-outline">I have an account</button></a>
+      <p class="margin-auto text-align-center" id="subheading">OR</p>
+      <a href="#login-page"><button class="button-outline">I have an account</button></a>
 		</div>
-	</section>
+</section>
+
+
 
 <!-- ONBOARDING 1; onboarding-1 -->
 
 <section data-role="page" id="onboarding-1">
+
   <header class="display-flex space-between">
     <div class="image-icon" id="chevron-left"  onclick="window.location='#welcome-page';"></div>
     <p onclick="window.location='#signup-page';">skip</p>
   </header>
-  <div class="onboarding-img-1"></div>
 
+  <div class="onboarding-img-1"></div>
   <div class="page-control">
     <h3 class="text-align-center">No more messy bagel tracking.</h3>
     <p class="text-align-center">Whip out your phone whenever you eat a bagel. Track it. Voila.</p>
   </div>
 
   <div class="bottom-button">
-        <a href="#onboarding-2"><button>Next ➜</button></a>
-    </div>
+    <a href="#onboarding-2"><button>Next ➜</button></a>
+  </div>
 
 </section>
+
+
 
 <!-- ONBOARDING 2; onboarding-2 -->
 
@@ -63,8 +70,8 @@
   <header class="display-flex space-between">
     <a href="#onboarding-1"><div class="image-icon" id="chevron-left"></div></a>
   </header>
-  <div class="onboarding-img-2">
-  </div>
+
+  <div class="onboarding-img-2"></div>
 
   <div class="page-control">
     <h3 class="text-align-center">Look back at the best bagels.</h3>
@@ -72,56 +79,52 @@
   </div>
 
   <div class="bottom-button">
-        <a href="#signup-page"><button>Sign up</button></a>
-    </div>
+    <a href="#signup-page"><button>Sign up</button></a>
+  </div>
 
 </section>
 
+
+
 <!-- LOGIN; login-page -->
 
-  <section data-role="page" id="login-page">
-      <div data-role="main">
-      <div class="welcome-back-img"></div>
+<section data-role="page" id="login-page">
+  <div data-role="main">
+  <div class="welcome-back-img"></div>
 
-      <div class="page-control">
+  <div class="page-control">
 
-      		<h1>Welcome back!</h1>
+  	<h1>Welcome back!</h1>
+    <form id="login-form" class="form" data-ajax="false">
+      <div class="form-control">
+  		<input type="text" placeholder="@username" id="welcomeback-login-username" data-role="none" class="form-input">
+  		</div>
 
-      	<form id="login-form" class="form" data-ajax="false">
+  		<div class="form-control">
+  		<input type="password" placeholder="********" id="welcomeback-login-password" data-role="none" class="form-input">
+  		</div>
 
-
-      		<div class="form-control">
-      			<input type="text" placeholder="@username" id="welcomeback-login-username" data-role="none" class="form-input">
-      		</div>
-
-      		<div class="form-control">
-      			<input type="password" placeholder="********" id="welcomeback-login-password" data-role="none" class="form-input">
-      		</div>
-
-          <div id="wrongCredentials"></div>
-
+       <div id="wrongCredentials"></div>
       	</div>
-
       		<div class="form-control bottom-button">
                <button type="submit" class="form-button">Login</button>
 
                <a href="#onboarding-1"><p id="subheading" style="text-align:right">Create a new account</p></a>
-            </div>
-         </form>
-
       </div>
-   </section>
+    </form>
+  </div>
+</section>
 
 
-<!-- end -->
+
+
 
 
 <!-- SIGNUP PAGE; signup-page -->
 
   <section data-role="page" id="signup-page">
-
   <header>
-        <a href="#welcome-page"><div class="image-icon" id="chevron-left"></div></a>
+    <a href="#welcome-page"><div class="image-icon" id="chevron-left"></div></a>
   </header>
 
   	<div class="page-control">
@@ -140,74 +143,84 @@
         <div class="form-control">
           <input type="text" placeholder="Mr. Bagel" id="signup-fullname" data-role="none" class="form-input">
             </div>
-    </div>
+        </div>
       		    <div class="bottom-button">
                		<a href="#password-page"><button>next</button></a>
             	</div>
- 		</div>
+        </div>
   </section>
+
+
+
 
 <!-- PASSWORD PAGE; password-page -->
 
-  <section data-role="page" id="password-page">
+<section data-role="page" id="password-page">
 
-  <header>
-  		  <a href="#signup-page"><div class="image-icon" id="chevron-left"></div></a>
-  </header>
+<header>
+  <a href="#signup-page"><div class="image-icon" id="chevron-left"></div></a>
+</header>
 
 
 
-  	<div class="page-control">
+<div class="page-control">
 
-  	   <div class="display-flex flex-column">
- 		  <h1 class="nav-page-top">Password</h1><br>
- 		   <p>What's a good password for your bagel app?</p>
-	   </div>
- 			<form id="password-login-form" class="form">
+<div class="display-flex flex-column">
+  <h1 class="nav-page-top">Password</h1><br>
+    <p>What's a good password for your bagel app?</p>
+</div>
+<form id="password-login-form" class="form">
 
- 				<div class="form-control">
- 					<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input"><br>
-      			</div>
+	<div class="form-control">
+		<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input"><br>
+		</div>
 
  		   <p>Confirm password</p>
 
  				<div class="form-control">
  					<input type="password" placeholder="*************" id="new-login-password-2" data-role="none" class="form-input">
-      			</div>
-      	 </div>
+      	</div>
+      </div>
 
 
-      		    <div class="bottom-button">
-               		<a href="#confirmation-signup-page"><button>next</button></a>
-            	</div>
+	    <div class="bottom-button">
+       	<a href="#confirmation-signup-page"><button>next</button></a>
+    	</div>
  		</div>
  	</form>
  </div>
   </section>
 
 
+
+
 <!-- CONFIRMATION SIGNUP PAGE; confirmation-signup-page -->
 
-  <section data-role="page" id="confirmation-signup-page">
+<section data-role="page" id="confirmation-signup-page">
 
-		<div class="welcome-back-img"></div>
+  <div class="welcome-back-img"></div>
 
-		<div class="page-control">
-  			<div class="display-flex flex-column">
- 			  <h1 class="nav-page-top">Yaay, you're all set.</h1>
-        <br>
- 		  	  <p>You can change your username and password on your profile page.</p>
- 			</div>
- 		</div>
- 			<form id="signup-form" class="form">
-      		    <div class="bottom-button">
-               		<a href="#nav-page-empty-state"><button>Get Started</button></a>
-            	</div>
+    <div class="page-control">
+      <div class="display-flex flex-column">
+        <h1 class="nav-page-top">Yaay, you're all set.</h1>
 
-            </form>
- 		</div>
- 	  </header>
-  </section>
+<br>
+
+        <p>You can change your username and password on your profile page.</p>
+      </div>
+    </div>
+
+<form id="signup-form" class="form">
+  <div class="bottom-button">
+   	<a href="#nav-page-empty-state"><button>Get Started</button></a>
+	</div>
+
+   </form>
+ 	</div>
+ </header>
+</section>
+
+
 
 
   <!-- DROP LOCATION BEFORE ADD NEW BAGEL; map-page -->
@@ -234,61 +247,6 @@
   </section>
 
 <!-- end -->
-
-<!-- NAV PAGE EMPTY; nav-page-empty-state -->
-
-  <section data-role="page" id="nav-page-empty-state">
-
-  <header class="display-flex flex-row space-between">
-    
-    <h1>Elaine's Bagels</h1>
-     
-      <div class="display-flex flex-row">
-
-          <div class="image-icon" id="moon-icon" onclick="myFunction()"></div>
-
-
-         <a href="#profile-page">
-          <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';"></div>
-        </a>
-
-      </div>
-  </header>
-
-<!-- SEARCH BAR  -->
-
-    <div id="search-form" class="form-control" style="margin:10px">
-         <form class="form">
-        <div class="form-control-search">
-          <input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
-            </div>
-         </form>
-        </div>
-<!-- end -->
-
-  <div class="page-control">
-
-  <div class="emptystate-nav-img"></div>
-
-    <div class="display-flex flex-column text-align-center">
-      <h1 class="nav-page-top">Uh oh, seems like it's empty.</h1>
-      <br>
-      <p>Had your first bagel?</p>
-        <a href="#map-page"><button>Add my first bagel</button></a>
-    </div>
-  </div>
-
-</section>
-
-
-
-<!-- end -->
-
-
-
-<!-- NAV PAGE; nav-page -->
-
-
 
 
 <!-- INDIVIDUAL BAGEL PAGE; bagel-page -->
@@ -488,7 +446,7 @@
 
 <!--       			<input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input"> -->
 
-            <select id="username-existing" name="bagel" data-role="none">
+            <select id="bagelname-existing" name="bagel" data-role="none">
               <option selected="selected" value="Everything Bagel" data-role="none"></option>
               <option value="Plain Bagel">Plain Bagel</option>
               <option value="Sesame Bagel">Sesame Bagel</option>
@@ -755,8 +713,8 @@
  </form>
 
 
-    <div class="gallery-control">
-        <div class="display-grid flex-column">
+    <div class="gallery-control display-grid-gallery flex-column">
+      <div class="display-grid flex-column">
           <a href="#bagel-page"><div class="image-nav-1"></div></a>
           <a href="#bagel-page"><div class="image-nav-2"></div></a>
           <a href="#bagel-page"><div class="image-nav-3"></div></a>
@@ -772,9 +730,65 @@
           <a href="#bagel-page"><div class="image-nav-5"></div></a>
         </div>
       </div>
+    </div>
     </div>   
 
   </div>
+</section>
+
+
+
+
+
+
+<!-- NAV PAGE EMPTY; nav-page-empty-state -->
+
+<section data-role="page" id="nav-page-empty-state">
+
+<!-- PLUS AND NAV BUTTON -->
+
+    <a href="#map-page"><span class="fixedButton">
+        <div class="roundedFixedBtn">+</div></a></span>
+
+<!-- end -->
+
+  <header class="display-flex flex-row space-between">
+    <h1>Elaine's Bagels</h1>
+    
+      <div class="display-flex flex-row">
+
+          <div class="image-icon" id="moon-icon" onclick="myFunction()"></div>
+
+          
+         <a href="#profile-page">
+          <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';"></div>
+        </a>
+
+  </header>
+
+
+<!-- TABS -->
+
+<div class="tab-control">
+<button class="tablink" onclick="openPage('Map', this, '')" style='color:var(--black) !important;'>Map</button>
+<button class="tablink" onclick="openPage('Gallery', this, '')"  style='color:var(--black);' id="defaultOpen">Gallery</button>
+</div>
+
+<!-- end -->
+
+<div class="page-control">
+  <div class="emptystate-nav-img"></div>
+    <div class="display-flex flex-column text-align-center">
+      <h1 class="nav-page-top">Uh oh, seems like it's empty.</h1>
+
+      <br>
+
+      <p>Had your first bagel?</p>
+      <a href="#map-page"><button>Add my first bagel</button></a>
+    </div>
+  </div>
+</div>
+</section>
 
 
 

@@ -5,6 +5,18 @@ $(() => {
    // EVENT DELEGATION
    $(document)
 
+   .on("pagecontainerbeforeshow", function(event, ui){
+      console.log(ui.toPage[0].id)
+
+      // PAGE ROUTING. ada di pages.js
+      switch(ui.toPage[0].id) {
+         case "nav-page": NavPage(); break;
+         case "map-page": MapPage(); break;
+         case "bagel-page": BagelPage(); break;
+         case "profile-page": ProfPage(); break;
+      }
+   })
+
    // FORM SUBMISSIONS
    .on("submit", "#login-form", function(e) {
       e.preventDefault();

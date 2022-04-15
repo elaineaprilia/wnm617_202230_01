@@ -570,6 +570,8 @@ input{
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;   
+
+    margin-right: 10px;
 }
 
 /*GRID*/
@@ -578,6 +580,14 @@ input{
     grid-template-columns: repeat(2, 0fr);
     gap: 8px;
 }
+
+.display-grid-gallery{
+    display: grid;
+    grid-template-columns: repeat(2, 0fr);
+    gap: 8px;
+    justify-content: center;
+}
+
 
 table tr td:nth-child(3) {
     text-align: right;

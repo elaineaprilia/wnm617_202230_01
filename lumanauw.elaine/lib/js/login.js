@@ -1,23 +1,33 @@
-const checkLoginForm = () => {
+const checkLoginForm = async() => {
    let user = $("#welcomeback-login-username").val();
    let pass = $("#welcomeback-login-password").val();
 
    console.log(user,pass)
 
-   if (user === 'user' && pass === 'pass') {
+
+   let founduser = await query({
+      type:'check_signin',
+      params: [user,pass]
+   })
+
+   if (founduser.result.length > 0) {
       // logged in
       console.log('success');
-      sessionStorage.userId = 3;
+      sessionStorage.userId = founduser.result[0].id;
       $("#login-form")[0].reset();
    } else {
       // not logged in
       console.log('failure');
       sessionStorage.removeItem('userId');
-      document.getElementById("wrongCredentials").innerHTML = "<p style='color:red' id='subheading'>Whoops, it looks like your username or password is wrong. Try again.</p>";
+   document.getElementById("wrongCredentials").innerHTML = "<p style='color:red' id='subheading'>Whoops, it looks like your username or password is wrong. Try again.</p>";
    }
 
    checkUserId();
 }
+
+
+
+
 
 const checkUserId = () => {
    let p = ["#login-page","#signup-page",""];
@@ -36,4 +46,3 @@ const checkUserId = () => {
 function dontGo(event) {
     event.preventDefault();
 }
-
