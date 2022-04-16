@@ -538,9 +538,10 @@ input{
 }
 
 #edit-profilepic-img{
-    position: relative;
-    left: 70px;
-    bottom: 35px;
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    transform: translate(50%);
 }
 
 #chevron-left{

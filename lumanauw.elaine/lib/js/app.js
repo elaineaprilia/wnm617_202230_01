@@ -31,6 +31,19 @@ $(() => {
    })
 
 
+
+   .on("click", ".js-bagel-jump", function(e) {
+      try {
+         e.preventDefault();
+         sessionStorage.bagelId = $(this).data('id');
+         $.mobile.navigate("#bagel-page");
+      } catch(e) {
+         throw("No id detected");
+      }
+
+   })   
+
+
    // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
       let target = $(this).data("activate");
