@@ -2,8 +2,21 @@
 //nav-page
 const NavPage = async() => {
 
-     checkData(()=>window.google);
-     console.log(window.google)
+   let {result} = await query({
+      type:'recent_bagel_locations',
+      params:[sessionStorage.userId]
+   });
+   console.log(result);
+
+   let valid_bagels = result.reduce((r,o)=>{
+      o.icon = o.img;
+      if(o.lat && o.lng) r.push(o);
+      return r;
+   },[]);
+
+
+   let map_el = await makeMap("#nav-page .map-placeholder");
+   makeMarkers(map_el,valid_bagels)
 
 
   let {result:bagels} = await query({
@@ -20,8 +33,6 @@ const NavPage = async() => {
     type:'locations_by_bagel_id',
     params:[sessionStorage.bagelId]
   })
-
-  console.log(locations)
 }
 
 
@@ -56,6 +67,11 @@ const BagelPage = async() => {
     params:[sessionStorage.bagelId]
   })
   console.log(locations)
+
+
+  let map_el = await makeMap("#bagel-page .map-placeholder")
+  makeMarkers(map_el,locations)
+
   // $("#bagel-page .page-control").html(makeBagelProfilePage(location));
 
 }

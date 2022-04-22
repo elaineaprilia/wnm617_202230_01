@@ -265,10 +265,15 @@ button{
 
 .map-placeholder{
     width: 100%;
-    height: 800px;
+    height: 82vh;
     background-image: url(../img/map.jpg);
     background-position: center;
     background-size: cover;
+    position: absolute;
+}
+
+.map-placeholder-details{
+    position: relative;
 }
 
 
@@ -375,6 +380,13 @@ button{
 }
 
 
+/*.fixed-nav{
+    position: fixed;
+    z-index: 999;
+}
+
+
+*/
 /*BUTTON*/
 
 
@@ -385,6 +397,7 @@ button{
     bottom: 10px;
     right: 5px; 
     padding: 10px;
+    z-index: 999;
 }
 
 .fixedButtonPill{

@@ -79,6 +79,25 @@ function makeStatement($data) {
          return makeQuery($c, "SELECT * FROM `location_data` WHERE `bagel_id` = ?", $p);
 
 
+     case "recent_bagel_locations":
+         return makeQuery($c,"SELECT *
+            FROM `bagel_data` a
+            JOIN (
+               SELECT lg.*
+               FROM `location_data` lg
+               WHERE lg.id = (
+                  SELECT lt.id
+                  FROM `location_data` lt
+                  WHERE lt.bagel_id = lg.bagel_id
+                  ORDER BY lt.id DESC
+                  LIMIT 1
+               )
+            ) l
+            ON a.id = l.bagel_id
+            WHERE a.user_id = ?
+            ORDER BY l.bagel_id, l.id DESC
+         ", $p);
+
 
 
 

@@ -42,7 +42,7 @@ const makeBagelProfilePage = o => `
     <h3>Description</h3>
     <p>${o.description}</p>
     <div class="map-details"> 
-  <div data-role="main" class="map-placeholder" style="height:100px !important; border-radius:10px;">
+  <div data-role="main" class="map-placeholder" style="height:100px !important; position: relative !important;border-radius:10px;">
 <img src="lib/icon/location-pin.png" class="pin" style="transform:translate(0,120px);">
 </div>
 </div>
