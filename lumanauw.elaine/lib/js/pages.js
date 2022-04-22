@@ -1,6 +1,11 @@
 
 //nav-page
 const NavPage = async() => {
+
+     checkData(()=>window.google);
+     console.log(window.google)
+
+
   let {result:bagels} = await query({
   	type:'bagels_by_user_id',
   	params:[sessionStorage.userId]
