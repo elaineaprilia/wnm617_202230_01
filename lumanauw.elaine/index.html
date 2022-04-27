@@ -27,6 +27,7 @@ google cloud platform
    <script src="lib/js/pages.js"></script>
    <script src="lib/js/parts.js"></script>
    <script src="lib/js/maps.js"></script>
+   <script src="lib/js/forms.js"></script>
 
    <script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -239,7 +240,8 @@ google cloud platform
 
   <section data-role="page" id="map-page">
 
-  <header data-role="header display-flex space-between" class="navbar-header">
+<div class="ui-index" style="position:absolute !important">
+  <header data-role="header display-flex space-between" class="navbar-header-pin" style="z-index: 999 !important;">
       <div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
         <h1 class="nav-page-top">Drop your pin</h1>
            <a href="#add-new">skip</a></div>
@@ -248,14 +250,14 @@ google cloud platform
 
   <div class="bottom-button">
       <a href="#add-new">
-        <button type="submit">Add bagel details</button>
+        <button type="submit" style="z-index: 999;">Add bagel details</button>
       </a>
   </div>
 
-<img src="lib/icon/location-pin.png" class="pin">
-
-<div data-role="main" class="map-placeholder"></div>
-
+  <div class="map-page-control">
+    <div class="map-placeholder"></div>
+  </div>
+</div>
   </section>
 
 <!-- end -->
@@ -285,16 +287,7 @@ google cloud platform
  		<h3>Rating</h3>
  		<p>Hella gooooood</p>
     <div class="map-details"> 
-<div data-role="main" class="map-placeholder-details"
-
-style="width: 32vh;
-    border-radius: 10px;
-    height: 200px;
-    align-items: center;
-    min-width: 32vh; border-radius:10px;
-    position: relative !important;
-
-">
+<div data-role="main" class="map-placeholder-details">
     <img src="lib/icon/location-pin.png" class="pin" style="transform:translate(0,120px);">
 </div>
 </div>
@@ -682,6 +675,7 @@ style="width: 32vh;
 
 
 <section data-role="page" id="nav-page">
+  <div class="ui-index">
 
 <!-- PLUS AND NAV BUTTON -->
 
@@ -735,25 +729,11 @@ style="width: 32vh;
 
 
     <div class="gallery-control display-grid-gallery flex-column">
-      <div class="display-grid flex-column">
-          <a href="#bagel-page"><div class="image-nav-1"></div></a>
-          <a href="#bagel-page"><div class="image-nav-2"></div></a>
-          <a href="#bagel-page"><div class="image-nav-3"></div></a>
-          <a href="#bagel-page"><div class="image-nav-4"></div></a>
-          <a href="#bagel-page"><div class="image-nav-5"></div></a>
-          <a href="#bagel-page"><div class="image-nav-6"></div></a>
-          <a href="#bagel-page"><div class="image-nav-1"></div></a>
-          <a href="#bagel-page"><div class="image-nav-4"></div></a>
-          <a href="#bagel-page"><div class="image-nav-2"></div></a>
-          <a href="#bagel-page"><div class="image-nav-3"></div></a>
-          <a href="#bagel-page"><div class="image-nav-6"></div></a>
-          <a href="#bagel-page"><div class="image-nav-1"></div></a>
-          <a href="#bagel-page"><div class="image-nav-5"></div></a>
         </div>
       </div>
     </div>
     </div>   
-
+    </div>
   </div>
 </section>
 

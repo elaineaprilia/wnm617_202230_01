@@ -80,5 +80,7 @@ const BagelPage = async() => {
 
 const MapPage = async() => {
 
+   let map_el = await makeMap("#map-page .map-placeholder");
+   makeMarkers(map_el,valid_bagels)
 
 }

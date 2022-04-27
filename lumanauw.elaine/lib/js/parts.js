@@ -1,7 +1,3 @@
-
-
-
-
 const makeBagelList = templater(o=>`   
       <a href="#bagel-page" data-id="${o.id}" class="js-bagel-jump">
          <div class="image-nav-1" style="background-image: url(${o.img});">
