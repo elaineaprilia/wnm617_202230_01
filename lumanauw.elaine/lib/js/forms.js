@@ -2,11 +2,11 @@
 
 
 
-const submitAnimalAdd = () => {
-   let name = $("#bagelname-existing").val();
-   let type = $("#edit-flavor").val();
-   let breed = $("#edit-price").val();
-   let description = $("#edit-rating").val();
+const submitBagelAdd = () => {
+   let type = $("#bagel-add-form-type").val();
+   let spread = $("#bagel-add-form-spread").val();
+   let price = $("#bagel-add-form-price").val();
+   let description = $("#bagel-add-form-description").val();
 
-   console.log({name,type,breed,description})
+   console.log({type,spread,price,description})
 }

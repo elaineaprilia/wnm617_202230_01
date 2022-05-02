@@ -185,6 +185,10 @@
     
     
     img:'https://via.placeholder.com/400/',
-    icon: 'https://via.placeholder.com/400/?text=ICON'
+    icon: function(tags) {
+      return 'https://via.placeholder.com/400/' +
+        tags.integer(700,999) + '/fff/?text=' + 'Bagel';
+    },
+    date_create: '{{date(new Date(2022, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
   }
 ]

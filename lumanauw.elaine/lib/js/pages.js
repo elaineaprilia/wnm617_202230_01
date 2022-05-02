@@ -51,14 +51,15 @@ const ProfPage = async() => {
 }
 
 
+
+
+
 const BagelPage = async() => {
   let{result:bagels} = await query({
     type:'bagel_by_id',
     params:[sessionStorage.bagelId]
   })
   let [bagel] = bagels;
-
-  console.log(bagel)
   $("#bagel-page .image-bagel").css({"background-image":`url(${bagel.img})`})
   $("#bagel-page .page-control").html(makeBagelProfilePage(bagel));
 
@@ -74,6 +75,39 @@ const BagelPage = async() => {
 
   // $("#bagel-page .page-control").html(makeBagelProfilePage(location));
 
+}
+
+const UserEditPage = async() => {
+  let{result:users} = await query({
+    type:'user_by_id',
+    params:[sessionStorage.userId]
+  })
+  let [user] = users;
+
+  $("#user-edit-form").html(makeUserForm(user,"user-edit-form"))
+}
+
+
+
+const BagelEditPage = async() => {
+  let{result:bagels} = await query({
+    type:'bagel_by_id',
+    params:[sessionStorage.bagelId]
+  })
+  let [bagel] = bagels;
+
+  $("#bagel-edit-form").html(makeBagelForm(bagel,"bagel-edit-form"))
+}
+
+
+const BagelAddPage = async() => {
+  let{result:bagels} = await query({
+    type:'bagel_by_id',
+    params:[sessionStorage.bagelId]
+  })
+  let [bagel] = bagels;
+
+  $("#bagel-add-form").html(makeBagelForm({},"bagel-add-form"))
 }
 
 

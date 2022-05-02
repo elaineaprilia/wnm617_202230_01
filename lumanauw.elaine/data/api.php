@@ -89,13 +89,13 @@ function makeStatement($data) {
                   SELECT lt.id
                   FROM `location_data` lt
                   WHERE lt.bagel_id = lg.bagel_id
-                  ORDER BY lt.id DESC
+                  ORDER BY lt.date_create DESC
                   LIMIT 1
                )
             ) l
             ON a.id = l.bagel_id
             WHERE a.user_id = ?
-            ORDER BY l.bagel_id, l.id DESC
+            ORDER BY l.bagel_id, l.date_create DESC
          ", $p);
 
 

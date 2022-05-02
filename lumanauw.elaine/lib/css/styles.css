@@ -612,6 +612,19 @@ input{
     margin-right: 10px;
 }
 
+#edit-bagelpic{
+    width: 35px;
+    height: 35px;
+    border-radius: 200px;
+    background-image: url(../icon/edit-profilepic.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+
+    margin-right: 10px;
+}
+
+
 /*GRID*/
 .display-grid{
     display: grid;
@@ -747,6 +760,7 @@ table tr td:nth-child(1) {
 .dark-mode{
     background-color: var(--90black);
     color: var(--white); 
+    -webkit-transition: all 0.3s ease-in-out;
 }
 
 /*ROOT*/

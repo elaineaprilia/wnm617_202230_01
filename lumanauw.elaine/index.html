@@ -268,17 +268,33 @@ google cloud platform
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
- 			<h1 class="nav-page-top">Bagel Details</h1>
- 			<div class="image-icon edit"><a href="#edit-bagel">edit</a></div>
+ 	   		<div class="image-icon chevron-left"><a href="#bagel-page">back</a></div>
+ 			<h1 class="nav-page-top"> </h1>
+ 			<div class="image-icon edit"><a href="#add-location">+Location</a></div>
  		</header>
+<!-- 
+  <a href="#map-page">
+    <span class="fixedButton">
+      <div class="roundedFixedBtn">Loc</div>
+    </span>
+  </a>
+ -->
+<!--   <div class="bottom-button">
+      <a href="#add-new">
+        <button type="submit" style="z-index: 999;">Add bagel details</button>
+      </a>
+  </div>
 
+ -->
  		<div class="image-bagel"></div>
 
     <div class="page-control" style="transform: translate(0, -100px); !important">
     <div class="card" style="width:auto !important;margin:0 !important;padding-bottom: 20px; !important;">
  	<div class="display-flex flex-column">
+    <div class="display-flex space-between">
  		<h1>Asiago Bagel</h1>
+    <p>Edit</p>
+    </div>
     <br>
  		<h3>Flavor</h3>
  		<p>Nutty</p>
@@ -288,7 +304,7 @@ google cloud platform
  		<p>Hella gooooood</p>
     <div class="map-details"> 
 <div data-role="main" class="map-placeholder-details">
-    <img src="lib/icon/location-pin.png" class="pin" style="transform:translate(0,120px);">
+    <img src="" class="pin" style="transform:translate(0,120px);">
 </div>
 </div>
   </div>
@@ -317,7 +333,7 @@ google cloud platform
  		<div class="align-center display-flex flex-column justify-content-center align-items-center">
  			<div class="profile-image"></div>
 
-  <a href="#" data-activate="#edit-profilepic"><img src="lib/icon/edit-profilepic.png" id="edit-profilepic-img" /></a>
+  <a href="#" data-activate="#edit-profilepic"><img src="" id="edit-profilepic-img" /></a>
 
  			<h2>@elainelumanauw</h2>
 
@@ -348,6 +364,13 @@ google cloud platform
  			<td>About Okaybagel</td>
  			<td> > </td>
  		</tr>
+
+    <tr onclick="window.location='#edit-password';">
+      <td href="#edit-password"><div class="abouticon"></div></td>
+      <td>Password & Security</td>
+      <td> > </td>
+    </tr>
+
  			<tr onclick="window.location='#notifications-page';">
  			<td href="#notifications-page"><div class="displayicon"></div></td>
  			<td>Display mode & notifications</td>
@@ -451,50 +474,40 @@ google cloud platform
       </div>
     </div>
 
+    <div class="page-control">
+      <form id="bagel-add-form">
+    <form id="bagel-add-form">
+          <div class="form-control">
+            <label for="edit-existing-bagel">Bagel</label>
+            <input type="text" id="add-nameofbagel" data-role="none" class="form-input">
+          </div>
 
-	  <div class="page-control">
-	      	<form id="edit-bagel-form" class="form">
-      		
-      		<div class="form-control">
-      		  <label for="username-existing">Name of bagel</label>
+          <div class="form-control">
+            <label for="edit-existing-bagel">Spread</label>
+            <input type="text"  id="add-spread" data-role="none" class="form-input">
+          </div>
 
-<!--       			<input type="text" placeholder="Everything Bagel" id="edit-username" data-role="none" class="form-input"> -->
+          <div class="form-control">
+            <label for="edit-existing-bagel">Price</label>
+            <input type="text"  id="add-price" data-role="none" class="form-input">
+          </div>
 
-            <select id="bagelname-existing" name="bagel" data-role="none">
-              <option selected="selected" value="Everything Bagel" data-role="none"></option>
-              <option value="Plain Bagel">Plain Bagel</option>
-              <option value="Sesame Bagel">Sesame Bagel</option>
-              <option value="Strawberry Bagel">Strawberry Bagel</option>
-              <option value="Cheese Bagel">Cheese Bagel</option>
-              <option value="Spinach Bagel">Spinach Bagel</option>
-              <option value="Other">Other</option>
-            </select>
-
-      		</div>
-
-      		<div class="form-control">
-      			<label for="username-existing">Flavor</label>
-      			<input type="text" placeholder="e.g. strawberry" id="edit-flavor" data-role="none" class="form-input">
-      		</div>
-
-      		<div class="form-control">
-      		  <label for="username-existing">Price</label>
-      			<input type="text" placeholder="$100.00" id="edit-price" data-role="none" class="form-input">
-      		</div>
-
-      		<div class="form-control">
-      			<label for="username-existing">Rating</label>
-      			<input type="text" placeholder="5 stars? 5 golden diamonds?" id="edit-rating" data-role="none" class="form-input">
-      		</div>
-
-          <a href="#" data-activate="#modal-bagel-image"><button class="button-outline">+Add bagel image</button></a>
+          <div class="form-control">
+            <label for="edit-existing-bagel">Description</label>
+            <textarea type="text"  id="add-description" data-role="none" class="form-input"></textarea>
+          </div>
 
     </div>
 
-      		<div class="form-control bottom-button">
-               <a href="#nav-page" class="form-button"><button>Save</button></a>
+          <div class="form-control bottom-button">
+              <a href="#nav-page" class="form-button js-submit-bagel-add">
+                <button>Save</button>
+              </a>
             </div>
          </form>
+
+
+
 
 <!-- BAGEL IMAGE MODAL -->
 
@@ -537,43 +550,61 @@ google cloud platform
 
 
     <div class="page-control">
-          <form id="new-bagel-form" class="form">
-         <label for="edit-existing-bagel">Name of bagel</label>       
-          <div class="form-control" data-role="none">
-            <select id="edit-existing-bagel" name="bagel" data-role="none">
-              <option selected="selected" value="Everything Bagel" data-role="none"></option>
-              <option value="Plain Bagel" selected>Asiago Bagel</option>
-              <option value="Sesame Bagel">Sesame Bagel</option>
-              <option value="Strawberry Bagel">Strawberry Bagel</option>
-              <option value="Cheese Bagel">Cheese Bagel</option>
-              <option value="Spinach Bagel">Spinach Bagel</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
+    <form id="bagel-edit-form">
 
-          <div class="form-control">
-            <label for="edit-existing-bagel">Flavor</label>
-            <input type="text" value="Nutty" id="new-flavor" data-role="none" class="form-input">
-          </div>
 
-          <div class="form-control">
-            <label for="edit-existing-bagel">Price</label>
-            <input type="text" value="$4.25" id="edit-name-of-bagel" data-role="none" class="form-input">
-          </div>
-
-          <div class="form-control">
-            <label for="edit-existing-bagel">Rating</label>
-            <input type="text" value="Hella gooooood" id="new-rating" data-role="none" class="form-input">
-          </div>
     </div>
 
           <div class="form-control bottom-button">
-               <a href="#nav-page" class="form-button"><button>Save</button></a>
+              <a href="#nav-page" class="form-button js-submit-bagel-add">
+                <button>Save</button>
+              </a>
             </div>
          </form>
   </section>
 
   <!-- end -->
+
+
+
+<!-- EDIT PASSWORD -->
+
+  <section data-role="page" id="edit-password">
+    <header>
+          <a href="#profile-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="page-control">
+      <div class="display-flex margin-auto">
+      <h1 class="nav-page-top">Edit password</h1>
+    </div>
+          <div class="card" style="margin:0;margin-top:20px">
+          <p>Did you know that it takes .29 milliseconds to crack a 7-character password, and 1 decade to crack an 11-character password?</p></div>
+    <br>
+          <form id="user-password-form" class="form">
+          <div class="form-control">
+            <label for="username-existing">Type new password</label>
+            <input type="password" id="edit-password" data-role="none" class="form-input">
+          </div>
+
+          <div class="form-control">
+            <label for="username-existing">Confirm password</label>
+            <input type="password" id="edit-password-2" data-role="none" class="form-input">
+          </div>
+    </div>
+
+          <div class="form-control bottom-button">
+               <a href="#profile-page" class="form-button"><button>Save password</button></a>
+            </div>
+         </form>
+
+  </section>
+
+
+
+<!-- end -->
+
+
 
 <!-- EDIT PROFILE; edit-profile -->
 
@@ -588,21 +619,21 @@ google cloud platform
     </div>
 
     <br>
-          <form id="edit-profile" class="form">
+          <form id="user-edit-form" class="form">
           
           <div class="form-control">
             <label for="username-existing">Username</label>
-            <input type="text" value="elainelumanauw" id="new-username" data-role="none" class="form-input">
+            <input type="text" id="edit-username" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
             <label for="username-existing">Password</label>
-            <input type="password" value="**********" id="edit-password-2" data-role="none" class="form-input">
+            <input type="password" id="edit-pass" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
-            <label for="username-existing">Name</label>
-            <input type="text" value="Elaine" id="edit-name-2" data-role="none" class="form-input">
+            <label for="username-existing">Email</label>
+            <input type="text" id="edit-email" data-role="none" class="form-input">
           </div>
     </div>
 
@@ -679,7 +710,7 @@ google cloud platform
 
 <!-- PLUS AND NAV BUTTON -->
 
-    <a href="#map-page"><span class="fixedButton">
+    <a href="#add-new"><span class="fixedButton">
         <div class="roundedFixedBtn">+</div></a></span>
 <!-- end -->
 <div class="fixed-nav">
@@ -718,7 +749,7 @@ google cloud platform
 
 <!-- BAGEL GALLERY LIST GOES HERE -->
 
-  <div id="Gallery" class="tabcontent" style="padding-top:0 !important">
+  <div id="Gallery" class="tabcontent" style="padding-top:0;overflow: auto;!important">
 
 
 <form class="form">
