@@ -10,6 +10,19 @@ const displayProfileIcon = o =>`
 `;
 
 
+const makeBagelPopupBody = o =>`
+   <div class="display-flex space-between js-bagel-jump noclick-children" data-id="${o.bagel_id}" style="display:flex;justify-content:space-evenly;">
+      <img src="${o.img}" alt="" style="width:30%">
+   <div>
+   <h2>${o.type}</h2>
+   <p>${o.spread}</p>
+   </div>
+</div>
+`;
+
+
+
+
 
 const makeUserProfilePage = o =>`
       <img src="${o.img}" id="edit-profilepic-img" /></a>

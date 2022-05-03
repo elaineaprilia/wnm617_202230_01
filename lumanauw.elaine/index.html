@@ -268,7 +268,7 @@ google cloud platform
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a href="#bagel-page">back</a></div>
+ 	   		<div class="image-icon chevron-left"><a onclick="history.back()">back</a></div>
  			<h1 class="nav-page-top"> </h1>
  			<div class="image-icon edit"><a href="#add-location">+Location</a></div>
  		</header>
@@ -474,7 +474,7 @@ google cloud platform
       </div>
     </div>
 
-    <div class="page-control">
+    <div class="page-control"  style="padding-top:0 !important;">
       <form id="bagel-add-form">
     <form id="bagel-add-form">
           <div class="form-control">
@@ -549,7 +549,7 @@ google cloud platform
     </div>
 
 
-    <div class="page-control">
+    <div class="page-control" style="padding-top:0 !important;">
     <form id="bagel-edit-form">
 
 
@@ -707,6 +707,17 @@ google cloud platform
 
 <section data-role="page" id="nav-page">
   <div class="ui-index">
+
+<!-- DRAWER -->
+
+      <div class="modal" id="map-drawer">
+         <div class="modal-back transparent passthrough" data-deactivate="#map-drawer"></div>
+         <div class="modal-drawer top">
+            <div class="modal-body" style="border-radius:10px !important;"></div>
+         </div>
+      </div>
+
+
 
 <!-- PLUS AND NAV BUTTON -->
 

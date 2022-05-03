@@ -40,6 +40,20 @@ body{
 }
 
 
+/* INFOWINDOW */
+
+
+.modal-body {
+   background-color: var(--white);
+   flex: 1 1 100%;
+   padding: 1em;
+}
+
+
+
+
+
+
 /*TABS*/
 
 * {box-sizing: border-box}
@@ -682,7 +696,6 @@ table tr td:nth-child(1) {
 }
 .modal.active {
    opacity: 1;
-   pointer-events: initial;
 }
 .modal-back {
    position: absolute;
@@ -692,6 +705,11 @@ table tr td:nth-child(1) {
    height: 100%;
    background-color: rgba(0,0,0,0.7);
 }
+
+.modal.active .modal-back {
+    pointer-events: initial;
+}
+
 .modal-back.transparent {
    background-color: transparent;
 }
@@ -712,6 +730,7 @@ table tr td:nth-child(1) {
 }
 .modal.active .modal-popup {
    transform: translate(-50%, 0);
+   pointer-events: initial;
 }
 .modal-head,
 .modal-foot {
@@ -721,17 +740,17 @@ table tr td:nth-child(1) {
    padding: 20px;
 }
 .modal-body {
-   background-color: white;
+   background-color: var(--white);
    flex: 1 1 100%;
    padding: 1em;
 }
 
 .modal-drawer {
    position: absolute;
-   display: flex;
+/*   display: flex;*/
    flex-direction: column;
    transition: all 0.3s;
-   box-shadow: 0 0 5px rgba(0,0,0,0.3);
+/*   box-shadow: 0 0 5px rgba(0,0,0,0.3);*/
 }
 
 .modal-drawer.left,
@@ -744,14 +763,15 @@ table tr td:nth-child(1) {
 
 .modal-drawer.top,
 .modal-drawer.bottom {
-   height: 40vh;
-   width: 100%;
+    margin-top: 50vw;
+   width: 80%;
 }
 .modal-drawer.top { top:0; transform:translateY(-100%); }
 .modal-drawer.bottom { bottom:0; transform:translateY(100%); }
 
 .modal.active .modal-drawer {
-   transform: translate(0);
+   transform: translate(10vw);
+   pointer-events: initial;
 }
 
 
@@ -761,6 +781,11 @@ table tr td:nth-child(1) {
     background-color: var(--90black);
     color: var(--white); 
     -webkit-transition: all 0.3s ease-in-out;
+}
+
+.dark-mode .modal-body{
+    background-color: var(--90black);
+    color: var(--white);
 }
 
 /*ROOT*/
@@ -807,5 +832,5 @@ table tr td:nth-child(1) {
 .float-left{ float: left }
 .position-fixed{ position:fixed; }
 .border-box{box-sizing: border-box;}
-
+.noclick-children * { pointer-events:none; }
 .margin-auto{ margin:auto }
