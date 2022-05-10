@@ -12,8 +12,10 @@ $(() => {
       switch(ui.toPage[0].id) {
          case "nav-page": NavPage(); break;
          case "map-page": MapPage(); break;
+
          case "edit-profile": UserEditPage(); break;
          case "bagel-page": BagelPage(); break;
+         
          case "profile-page": ProfPage(); break;
          case "edit-bagel": BagelEditPage(); break;
          case "add-new": BagelAddPage(); break;
@@ -25,6 +27,18 @@ $(() => {
       e.preventDefault();
       checkLoginForm();
    })
+
+   .on("submit", "#signup-form", function(e) {
+      e.preventDefault();
+      submitUserSignup();
+   })
+
+
+
+   // .on("submit", "#signup-form", function(e) {
+   //    e.preventDefault();
+   //    submitUserSignup();
+   // })
 
 
    // FORM CLICKS

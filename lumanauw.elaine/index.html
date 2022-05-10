@@ -136,6 +136,7 @@ google cloud platform
 <!-- SIGNUP PAGE; signup-page -->
 
   <section data-role="page" id="signup-page">
+
   <header>
     <a href="#welcome-page"><div class="image-icon" id="chevron-left"></div></a>
   </header>
@@ -143,24 +144,35 @@ google cloud platform
   	<div class="page-control">
   		<div class="display-flex flex-column margin-auto">
  		  <h1 class="nav-page-top">Set up a username</h1><br>
- 		   <p>Let's setup a username for you! Make it short and sweet.</p>
+      <p>Let's setup a username for you! Make it short and sweet.</p>
  		</div>
 
- 			<form id="setup-username" class="form">
+ 			<form id="signup-form" class="form" data-ajax="false">
+
  				<div class="form-control">
  					<input type="text" placeholder="@username" id="signup-username" data-role="none" class="form-input">
-      			</div><br>
+      	</div>
+
+            <br>
 
        <p>What should we call you?</p>
-
         <div class="form-control">
-          <input type="text" placeholder="Mr. Bagel" id="signup-fullname" data-role="none" class="form-input">
-            </div>
+          <input type="text" placeholder="Mr. Bagel" id="signup-name" data-role="none" class="form-input">
         </div>
-      		    <div class="bottom-button">
-               		<a href="#password-page"><button>next</button></a>
-            	</div>
+
+            <br>
+
+       <p>What's a good email address?</p>
+        <div class="form-control">
+          <input type="text" placeholder="mrbagel@email.com" id="signup-email" data-role="none" class="form-input">
         </div>
+
+      </div>
+
+      	<div class="bottom-button">
+            <a href="#password-page"><button>Next</button></a>
+        </div>
+      </div>
   </section>
 
 
@@ -182,23 +194,24 @@ google cloud platform
   <h1 class="nav-page-top">Password</h1><br>
     <p>What's a good password for your bagel app?</p>
 </div>
-<form id="password-login-form" class="form">
 
 	<div class="form-control">
-		<input type="password" placeholder="*************" id="new-login-password" data-role="none" class="form-input"><br>
+		<input type="password" placeholder="*************" id="signup-password" data-role="none" class="form-input"><br>
 		</div>
 
  		   <p>Confirm password</p>
 
- 				<div class="form-control">
- 					<input type="password" placeholder="*************" id="new-login-password-2" data-role="none" class="form-input">
+ 			<div class="form-control">
+ 					<input type="password" placeholder="*************" id="signup-password2" data-role="none" class="form-input">
       	</div>
+               <div id="pw-dont-match"></div>
       </div>
 
-
 	    <div class="bottom-button">
-       	<a href="#confirmation-signup-page"><button>next</button></a>
-    	</div>
+<!--        	<a href="#confirmation-signup-page"> -->
+        <button type="submit">Submit</button>
+<!--         </a> -->
+      </div>
  		</div>
  	</form>
  </div>
@@ -223,12 +236,11 @@ google cloud platform
       </div>
     </div>
 
-<form id="signup-form" class="form">
   <div class="bottom-button">
    	<a href="#nav-page-empty-state"><button>Get Started</button></a>
 	</div>
 
-   </form>
+
  	</div>
  </header>
 </section>
@@ -337,7 +349,7 @@ google cloud platform
 
  			<h2>@elainelumanauw</h2>
 
-      <div class="card">
+<!--       <div class="card">
         <div class="display-flex flex-column">
           <div class="display-flex flex-row space-between">
           <p>Bagels eaten</p>
@@ -348,7 +360,7 @@ google cloud platform
           <p>200</p>
           </div>
         </div>
-      </div>
+      </div> -->
  		</div>
  	</div>
 
@@ -627,8 +639,8 @@ google cloud platform
           </div>
 
           <div class="form-control">
-            <label for="username-existing">Password</label>
-            <input type="password" id="edit-pass" data-role="none" class="form-input">
+            <label for="username-existing">Name</label>
+            <input type="text" id="edit-name" data-role="none" class="form-input">
           </div>
 
           <div class="form-control">
@@ -725,7 +737,7 @@ google cloud platform
         <div class="roundedFixedBtn">+</div></a></span>
 <!-- end -->
 <div class="fixed-nav">
-  <header class="display-flex flex-row space-between">
+  <header class="display-flex flex-row space-between" id="headernav-fill">
     <h1>Elaine's Bagels</h1>
     
       <div class="display-flex flex-row">
@@ -795,7 +807,7 @@ google cloud platform
 
 <!-- end -->
 
-  <header class="display-flex flex-row space-between">
+  <header class="display-flex flex-row space-between" id="headernav">
     <h1>Elaine's Bagels</h1>
     
       <div class="display-flex flex-row">

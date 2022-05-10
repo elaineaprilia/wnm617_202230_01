@@ -25,18 +25,6 @@ const NavPage = async() => {
 
          console.log(bagel)
 
-         // Just Navigate
-         // sessionStorage.animalId = animal.animal_id;
-         // $.mobile.navigate("#animal-profile-page");
-
-
-         // Open Google InfoWindow
-         // map_el.data("infoWindow")
-         //    .open(map_el.data("map"),m);
-         // map_el.data("infoWindow")
-         //    .setContent(valid_bagels[i].name);
-
-
          $("#map-drawer")
             .addClass("active")
             .find(".modal-body")
@@ -58,6 +46,18 @@ const NavPage = async() => {
     type:'locations_by_bagel_id',
     params:[sessionStorage.bagelId]
   })
+
+  let{result:users} = await query({
+    type:'user_by_id',
+    params:[sessionStorage.userId]
+  })
+  let [user] = users;
+
+  console.log(user)
+
+   $("#nav-page #headernav-fill").html(displayProfileIcon(user));
+   $("#nav-page-empty-state #headernav").html(displayProfileIcon(user));
+
 }
 
 
@@ -71,6 +71,7 @@ const ProfPage = async() => {
   let [user] = users;
 
   console.log(user)
+
   $("#profile-page .page-control").html(makeUserProfilePage(user));
 
 }

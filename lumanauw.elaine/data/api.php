@@ -103,6 +103,130 @@ function makeStatement($data) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+      /* INSERT */
+
+
+      case "insert_user":
+         $r = makeQuery($c,"SELECT id FROM `user_data` WHERE `username`=? OR `email` = ?", [ $p[0], $p[1] ]);
+         if(count($r['result']))
+            return ["error"=>"Username or Email already exists"];
+
+         makeQuery($c,"INSERT INTO
+            `user_data`
+            (`username`,`email`,`password`,`img`,`date_create`)
+            VALUES
+            (?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_bagel":
+         makeQuery($c,"INSERT INTO
+            `bagel_data`
+            (`user_id`,`type`,`description`,`price`,`spread`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=new-bagel!', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+      case "insert_location":
+         makeQuery($c,"INSERT INTO
+            `location_data`
+            (`bagel_id`,`lat`,`lng`,`description`,`img`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', NOW())
+            ", $p, false);
+         return ["id"=>$c->lastInsertId()];
+
+
+
+      /* UPDATE */
+
+      case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `user_data`
+            SET
+               `name` = ?,
+               `username` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_password":
+         $r = makeQuery($c,"UPDATE
+            `user_data`
+            SET
+               `password` = md5(?)
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_bagel":
+         $r = makeQuery($c,"UPDATE
+            `bagel_data`
+            SET
+               `type` = ?,
+               `spread` = ?,
+               `price` = ?,
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "location_data":
+         $r = makeQuery($c,"UPDATE
+            `location_data`
+            SET
+               `description` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+      /* DELETE */
+
+      case "delete_bagel":
+         $r = makeQuery($c,"DELETE FROM
+            `bagel_data`
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       case "check_signin":
          return makeQuery($c, "SELECT id from `user_data` WHERE `username` = ? AND `password` = md5(?)", $p);
 

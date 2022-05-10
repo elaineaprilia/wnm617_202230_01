@@ -6,6 +6,16 @@ const makeBagelList = templater(o=>`
 
 
 const displayProfileIcon = o =>`
+    <h1>${o.username}</h1>
+    
+      <div class="display-flex flex-row">
+
+          <div class="image-icon" id="moon-icon" onclick="myFunction()"></div>
+
+          
+         <a href="#profile-page">
+          <div class="image-icon" id="profile-icon" style="content: url(${o.img});"  onclick="window.location='#profile-page';"></div>
+        </a>
 
 `;
 
@@ -28,6 +38,7 @@ const makeUserProfilePage = o =>`
       <img src="${o.img}" id="edit-profilepic-img" /></a>
       <div class="display-flex flex-column align-items-center">
          <h2 style="a">@${o.username}</h2>
+         <p style="a">${o.email}<p>
       </div>
 `;
 
