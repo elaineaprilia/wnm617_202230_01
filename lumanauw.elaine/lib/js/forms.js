@@ -41,12 +41,12 @@ const submitBagelEdit = async () => {
 
    let {result,error} = await query({
       type: 'update_bagel',
-      params: [type,price,spread,description,sessionStorage.bagelId]
+      params: [type,spread,price,description,sessionStorage.bagelId]
    });
 
    if(error) throw(error);
 
-   history.go(-1);
+   history.go(-2);
 
 
 }
@@ -98,9 +98,9 @@ const submitUserSignup = async () => {
 
 
 const submitUserEdit = async () => {
-   let name = $("#edit-name").val();
-   let username = $("#edit-username").val();
-   let email = $("#edit-email").val();
+   let name = $("#user-edit-form-Name").val();
+   let username = $("#user-edit-form-username").val();
+   let email = $("#user-edit-form-email").val();
 
    console.log({name,username,email})
 
@@ -111,24 +111,75 @@ const submitUserEdit = async () => {
 
    if(error) throw(error);
 
-   history.go(-1);
+   history.go(-2);
 }
 
 
 
 
+
+
+
+
+const submitPasswordEdit = async () => {
+   let password = $("#edit-password").val();
+
+   console.log({password})
+
+   let {result,error} = await query({
+      type: 'update_password',
+      params: [password,sessionStorage.userId]
+   });
+
+   // if(error) throw(error);
+
+   // history.go(-1);
+
+}
+
+
+
 const submitLocationAdd = async () => {
-   let animal = $("#location-animal").val();
+   let bagel = $(".location-bagel").val();
    let lat = $("#location-lat").val();
    let lng = $("#location-lng").val();
    let description = $("#location-description").val();
 
+   console.log({bagel,lat,lng,description})
+
+
    let {result,error} = await query({
       type: 'insert_location',
-      params: [animal,lat,lng,description]
+      params: [bagel,lat,lng,description]
    });
 
-   if(error) throw(error);
+   if(error) console.log(error);
+}
 
-   history.go(-2);
+
+
+
+const getReverseGeocodingData = async() => {
+
+  var lat = document.getElementById('location-lat').value;
+  var lng = document.getElementById('location-lng').value;
+
+    var latlng = new google.maps.LatLng(lat, lng);
+
+    // This is making the Geocode request
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'latLng': latlng },  (results, status) =>{
+        if (status !== google.maps.GeocoderStatus.OK) {
+            alert(status);
+        }
+        // This is checking to see if the Geoeode Status is OK before proceeding
+        if (status == google.maps.GeocoderStatus.OK) {
+            var address = (results[1].formatted_address);
+
+      document.getElementById("Address").innerHTML = value= results[0].formatted_address;
+        }
+
+         console.log(results);
+    });
+
 }

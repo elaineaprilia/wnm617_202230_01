@@ -48,7 +48,7 @@ const makeMarkers = (map_el, map_locs=[]) => {
 
 const setMapBounds = (map_el,map_locs) => {
    let {map} = map_el.data();
-   let zoom = 60;
+   let zoom = 17;
 
    if(map_locs.length === 1) {
       map.setCenter(map_locs[0]);

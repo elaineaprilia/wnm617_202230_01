@@ -2,6 +2,9 @@ const makeBagelList = templater(o=>`
       <a href="#bagel-page" data-id="${o.id}" class="js-bagel-jump">
          <div class="image-nav-1" style="background-image: url(${o.img});">
          </div>
+      <div class="display-flex">
+         <p class="gallery-darkmode">${o.type}</p>
+      </div>
 `);
 
 
@@ -14,7 +17,8 @@ const displayProfileIcon = o =>`
 
           
          <a href="#profile-page">
-          <div class="image-icon" id="profile-icon" style="content: url(${o.img});"  onclick="window.location='#profile-page';"></div>
+          <div class="image-icon" id="profile-icon" style="background-image: url('${o.img}');"  onclick="window.location='#profile-page';"></div>
+         <a href="#" data-activate="#edit-profilepic">
         </a>
 
 `;
@@ -26,6 +30,7 @@ const makeBagelPopupBody = o =>`
    <div>
    <h2>${o.type}</h2>
    <p>${o.spread}</p>
+   <p>$ ${o.price}</p>
    </div>
 </div>
 `;
@@ -35,11 +40,49 @@ const makeBagelPopupBody = o =>`
 
 
 const makeUserProfilePage = o =>`
-      <img src="${o.img}" id="edit-profilepic-img" /></a>
+      <div="display-flex flex-row">
+         <img src="${o.img}" id="edit-profilepic-img" />
+      </div>
       <div class="display-flex flex-column align-items-center">
          <h2 style="a">@${o.username}</h2>
-         <p style="a">${o.email}<p>
+         <p style="a">${o.email}</p>
+         <br>
+         <p style="color:orange;"><a href="#user-edit-photo-page">Edit profile picture</a></p>
       </div>
+
+
+
+
+     <div class="modal" id="edit-profilepic">
+         <div class="modal-back" data-deactivate="#edit-profilepic"></div>
+         <div class="modal-popup">
+          <div class="modal-head text-align-center">
+        <div class="modal-head text-align-center" data-activate="edit-profilepic">Edit profile image
+           <div class="display-flex flex-column" style="padding-top:10px;">
+         <a href="#profile-page" data-deactivate="#logout-modal">
+
+      <div>
+
+
+
+         <button style="padding:10px;width:100%;"><a href="#bagel-edit-photo-page">Upload from gallery</a></button>
+         <button><a href="#"><button style="padding:10px;width:100%;" class="button-outline">Cancel</button></a>
+         </div>
+        </div>
+        </div>
+
+<style>
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius:40px;
+}
+</style>
 `;
 
 
@@ -55,7 +98,10 @@ const makeBagelProfilePage = o => `
   <div class="display-flex flex-column">
    <div class="display-flex space-between">
     <h1>${o.type}</h1>
+    <div class="display-flex flex-row">
     <a href="#edit-bagel"><div id="edit-bagelpic"></div></a>
+    <a href="#delete-bagel" data-activate="#delete-modal"><div class="js-bagel-delete" id="delete-bagelpic"></div></a>
+    </div>
     </div>
      <br>
     <h3>Spread</h3>

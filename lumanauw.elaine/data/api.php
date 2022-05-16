@@ -48,6 +48,24 @@ function makeQuery($c,$ps,$p,$makeResults=true) {
 }
 
 
+
+function makeUpload($file,$folder) {
+   $filename = microtime(true) . "_" . $_FILES[$file]['name'];
+
+   if(@move_uploaded_file(
+      $_FILES[$file]['tmp_name'],
+      $folder.$filename
+   )) return ["result"=>$filename];
+   else return [
+      "error"=>"File Upload Failed",
+      "filename"=>$filename
+   ];
+}
+
+
+
+
+
 function makeStatement($data) {
    $c = makeConn();
    $t = $data->type;
@@ -120,7 +138,9 @@ function makeStatement($data) {
       case "insert_user":
          $r = makeQuery($c,"SELECT id FROM `user_data` WHERE `username`=? OR `email` = ?", [ $p[0], $p[1] ]);
          if(count($r['result']))
-            return ["error"=>"Username or Email already exists"];
+            return ["error"=>"Username or Email already exists"
+         // ,document.getElementById("id-pw-exist").innerHTML = "<p style='color:red' id='subheading'>Whoops, it looks like your username or password is wrong. Try again.</p>"
+         ];
 
          makeQuery($c,"INSERT INTO
             `user_data`
@@ -133,7 +153,7 @@ function makeStatement($data) {
       case "insert_bagel":
          makeQuery($c,"INSERT INTO
             `bagel_data`
-            (`user_id`,`type`,`description`,`price`,`spread`,`img`,`date_create`)
+            (`user_id`,`type`,`spread`,`price`,`description`,`img`,`date_create`)
             VALUES
             (?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=new-bagel!', NOW())
             ", $p, false);
@@ -144,7 +164,7 @@ function makeStatement($data) {
             `location_data`
             (`bagel_id`,`lat`,`lng`,`description`,`img`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, 'https://via.placeholder.com/400/?text=PHOTO', 'https://via.placeholder.com/400/?text=ICON', NOW())
+            (?, ?, ?, ?, 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', NOW())
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 
@@ -199,6 +219,30 @@ function makeStatement($data) {
 
 
 
+      /* UPLOAD */
+
+      case "update_user_image":
+         $r = makeQuery($c,"UPDATE
+            `user_data`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+      case "update_bagel_image":
+         $r = makeQuery($c,"UPDATE
+            `bagel_data`
+            SET `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         if(isset($r['error'])) return $r;
+         return ["result"=>"Success"];
+
+
+
+
+
       /* DELETE */
 
       case "delete_bagel":
@@ -234,6 +278,13 @@ function makeStatement($data) {
       default:
          return ["error"=>"No Matched Type"];
    }
+}
+
+
+
+if(!empty($_FILES)) {
+   $r = makeUpload("image","../uploads/");
+   die(json_encode($r));
 }
 
 

@@ -155,17 +155,17 @@ google cloud platform
 
             <br>
 
-       <p>What should we call you?</p>
+       <p>What's a good email address?</p>
         <div class="form-control">
-          <input type="text" placeholder="Mr. Bagel" id="signup-name" data-role="none" class="form-input">
+          <input type="email" placeholder="Mr. Bagel@bagels.com" id="signup-name" data-role="none" class="form-input">
         </div>
 
             <br>
 
-       <p>What's a good email address?</p>
+<!--        <p>What's a good email address?</p>
         <div class="form-control">
           <input type="text" placeholder="mrbagel@email.com" id="signup-email" data-role="none" class="form-input">
-        </div>
+        </div> -->
 
       </div>
 
@@ -205,6 +205,7 @@ google cloud platform
  					<input type="password" placeholder="*************" id="signup-password2" data-role="none" class="form-input">
       	</div>
                <div id="pw-dont-match"></div>
+               <div id="id-pw-exist"></div>
       </div>
 
 	    <div class="bottom-button">
@@ -248,28 +249,104 @@ google cloud platform
 
 
 
+<!-- DESCRIPTION PAGE; LOCATION DETAILS -->
+<section data-role="page" id="location-details">
+  <div class="background-image-overlay">
+    <header>
+          <a href="#map-page"><div class="image-icon" id="chevron-left"></div></a>
+    </header>
+
+    <div class="" style="border-style:none !important;padding-top:0;">
+      <div class="display-flex margin-auto">    </div>
+
+    <br>
+    <div class="card" style="width:inherit;">
+        <p>Yay, you've added a location.</p>
+  <h2 class="card-result" id="Address">Jk you haven't added your location!</h2><br>
+    </div>
+  </div>
+
+  <div class="page-control">
+      <h2 class="nav-page-top">Add a memorable description</h2><br>
+
+  <textarea id="location-description" class="form-input" data-role="none" placeholder="About your bagel..."></textarea>
+
+</div>
+
+</div>
+
+    <div class="bottom-button">
+      <a href="#nav-page">
+        <button class="js-submit-location-add">Save your bagel</button>
+      </a>
+
+    </div>
+</section>
+
+
+
+
+<!-- CHOOSE BAGEL PAGE -->
+<section data-role="page" id="choose-bagel">
+  <header data-role="header">
+    <h1>Choose your bagel</h1>
+    <ul>
+      <li><a href="#" data-rel="back">Back</a></li>
+      <li class="flex-stretch">Next</a></li>
+      <li><a href="#map-page">Next</a></li>
+    </ul>
+  </header>
+
+<div data-role="main">
+  <input type="hidden" id="location-bagel">
+  <form id="bagel-form" class="overscroll" data-ajax="false"></form>
+</div>
+</section>
+
+
+
+</section>
+
+
+
+
+
   <!-- DROP LOCATION BEFORE ADD NEW BAGEL; map-page -->
 
   <section data-role="page" id="map-page">
-
 <div class="ui-index" style="position:absolute !important">
   <header data-role="header display-flex space-between" class="navbar-header-pin" style="z-index: 999 !important;">
-      <div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
+      <div class="image-icon chevron-left" onclick="history.back()">back</div>
         <h1 class="nav-page-top">Drop your pin</h1>
-           <a href="#add-new">skip</a></div>
+           <a href="#location-details">skip</a></div>
   </header>
 
 
+
+
+
   <div class="bottom-button">
-      <a href="#add-new">
-        <button type="submit" style="z-index: 999;">Add bagel details</button>
+      <a href="#location-details">
+        <button class="js-submit-location-add" type="submit" style="z-index: 999;">Add bagel details</button>
       </a>
   </div>
 
   <div class="map-page-control">
     <div class="map-placeholder"></div>
+
+
+    <div data-role="main">
+    <input type="hidden" id="location-lat">
+    <input type="hidden" id="location-lng">
+
   </div>
 </div>
+
+
+  <div data-role="main">
+     <input type="hidden" class="location-bagel">
+  </div>
+
   </section>
 
 <!-- end -->
@@ -280,24 +357,12 @@ google cloud platform
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a onclick="history.back()">back</a></div>
+ 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
  			<h1 class="nav-page-top"> </h1>
- 			<div class="image-icon edit"><a href="#add-location">+Location</a></div>
+ 			<div class="image-icon edit"><a href="#map-page" class=" js-location-choose-bagel">+Location</a></div>
  		</header>
-<!-- 
-  <a href="#map-page">
-    <span class="fixedButton">
-      <div class="roundedFixedBtn">Loc</div>
-    </span>
-  </a>
- -->
-<!--   <div class="bottom-button">
-      <a href="#add-new">
-        <button type="submit" style="z-index: 999;">Add bagel details</button>
-      </a>
-  </div>
 
- -->
+
  		<div class="image-bagel"></div>
 
     <div class="page-control" style="transform: translate(0, -100px); !important">
@@ -319,6 +384,7 @@ google cloud platform
     <img src="" class="pin" style="transform:translate(0,120px);">
 </div>
 </div>
+    
   </div>
  	</div>
  </div>
@@ -394,7 +460,7 @@ google cloud platform
 <!--  			<tr onclick="window.location='#';"> -->
     <tr>
  			<td href="#nav-page"><div class="logouticon"></div></td>
- 			<td style="color:red"><a href="#" data-activate="#logout-modal">Logout</a></td>
+ 			<td style="color:red"><a href="" data-activate="#logout-modal">Logout</a></td>
  			<td> > </td>
  		</tr>
  	</table>
@@ -408,7 +474,7 @@ google cloud platform
             <div class="modal-head text-align-center">Are you sure you want to logout?
           <div class="display-flex flex-column" style="padding-top:10px;">
          <a href="#profile-page" data-deactivate="#logout-modal"><button>Nah, just kidding</button></a>
-         <a href="#login-page" class="js-logout"><button class="button-outline">Yup, log me out</button></a>
+         <a href="https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/#" class="js-logout"><button class="button-outline">Yup, log me out</button></a>
          </div>
           </div>
         </div>
@@ -470,24 +536,54 @@ google cloud platform
 <!-- ADD NEW BAGEL; add-new -->
 	<section data-role="page" id="add-new">
 	  <header>
-	  		  <a href="#map-page"><div class="image-icon" id="chevron-left"></div></a>
+	  	<div class="image-icon" id="chevron-left" onclick="history.back()"></div>
 	  </header>
 
-	  <div class="page-control">
+	  <div class="page-control" style="border-style:none !important;padding-top:0;">
   		<div class="display-flex margin-auto">
- 		  <h1 class="nav-page-top">Add a new bagel</h1>
+ 		  <h1 class="nav-page-top">Add a new bagel</h1><br><br>
  		</div>
 
-    <br>
+ <!--    <br>
+      <div class="display-flex space-between">
+        <p>Pinned location</p>
+        <a onclick="history.back()"><p>Change pin</p></a>
+      </div>
+  <p class="card-result" id="Address">Pin your location...</p>
+ -->
 
+<label for="file-upload" data-role="none" class="custom-file-upload" style="display:flex;align-items:center;">
+<input type="hidden" id="animal-edit-photo-image">
+Upload an image
+</label>
+<input id="file-upload" type="file"/>
+</div>
+
+ <div data-role="none">
+         <input type="hidden" id="animal-edit-photo-image" data-role="none">
+<!--          <label class="imagepicker replace"> -->
+            <input type='file' id="animal-edit-photo-input" data-role="none">
+         </label>
+      </div>
+
+
+
+
+
+
+
+
+<!--     <button class="button-outline">Upload an image</button> -->
+<!--     <br>
       <div class="location-confirmed display-flex space-between">
-        <p>123 Abc Rd., San Jose, CA</p>
-        <a href="#map-page"><p class="link-sub">edit pin</p></a>
+        <p>123 Abc Rd., San Jose, CA</p> -->
+
+
+<!--         <a href="#map-page"><p class="link-sub">edit pin</p></a> -->
       </div>
     </div>
 
     <div class="page-control"  style="padding-top:0 !important;">
-      <form id="bagel-add-form">
     <form id="bagel-add-form">
           <div class="form-control">
             <label for="edit-existing-bagel">Bagel</label>
@@ -509,11 +605,14 @@ google cloud platform
             <textarea type="text"  id="add-description" data-role="none" class="form-input"></textarea>
           </div>
 
+
     </div>
+
 
           <div class="form-control bottom-button">
               <a href="#nav-page" class="form-button js-submit-bagel-add">
-                <button>Save</button>
+
+                <button>Save your bagel</button>
               </a>
             </div>
          </form>
@@ -543,9 +642,13 @@ google cloud platform
 
 <!-- EDIT-EXISTING BAGEL -->
   <section data-role="page" id="edit-bagel">
+  <div class="background-image-overlay">
+
     <header>
-          <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+          <a onclick="history.back()"><div class="image-icon" id="chevron-left"></div></a>
     </header>
+
+
 
     <div class="page-control">
       <div class="display-flex margin-auto">
@@ -554,10 +657,10 @@ google cloud platform
 
     <br>
 
-      <div class="location-confirmed display-flex space-between">
-        <p>123 Abc Rd., San Jose, CA</p>
-        <a href="#map-page"><p class="link-sub">edit pin</p></a>
-      </div>
+      <!-- <div class="location-confirmed display-flex space-between"> -->
+        <!-- <p>123 Abc Rd., San Jose, CA</p> -->
+        <!-- <a href="#map-page"><p class="link-sub">edit pin</p></a> -->
+      <!-- </div> -->
     </div>
 
 
@@ -568,9 +671,9 @@ google cloud platform
     </div>
 
           <div class="form-control bottom-button">
-              <a href="#nav-page" class="form-button js-submit-bagel-add">
-                <button>Save</button>
-              </a>
+              <div class="form-button js-submit-bagel-edit">
+                <button onclick="javascript:history.go(-1)">Save your bagel</button>
+              </div>
             </div>
          </form>
   </section>
@@ -596,17 +699,17 @@ google cloud platform
           <form id="user-password-form" class="form">
           <div class="form-control">
             <label for="username-existing">Type new password</label>
-            <input type="password" id="edit-password" data-role="none" class="form-input">
+            <input type="password" placeholder="******" id="edit-password" data-role="none" class="form-input">
           </div>
 
-          <div class="form-control">
+<!--           <div class="form-control">
             <label for="username-existing">Confirm password</label>
-            <input type="password" id="edit-password-2" data-role="none" class="form-input">
-          </div>
+            <input type="password" placeholder="******" id="edit-password-2" data-role="none" class="form-input">
+          </div> -->
     </div>
 
           <div class="form-control bottom-button">
-               <a href="#profile-page" class="form-button"><button>Save password</button></a>
+               <a href="#profile-page" class="form-button"><button class="js-submit-password-edit">Update password</button></a>
             </div>
          </form>
 
@@ -615,6 +718,36 @@ google cloud platform
 
 
 <!-- end -->
+
+
+
+<!-- EDIT PHOTO PAGE -->
+<section data-role="page" id="user-edit-photo-page">
+
+<header>
+  <a href="#profile-page" class="ui-link"><div class="image-icon" id="chevron-left"></div></a>
+</header>
+
+  <div class="card" style="width:-webkit-fill-available;">
+
+     <input type="hidden" id="user-edit-photo-image">
+     <label class="imagepicker replace">
+        <input type='file' id="user-edit-photo-input" data-role="none">
+     </label>
+
+<p>Click anywhere to upload an image.</p>
+
+</div>
+
+
+<div class="bottom-button">
+<button class="js-submit-user-upload">Save new photo</button>
+</div>
+
+</section>
+
+
+
 
 
 
@@ -650,7 +783,7 @@ google cloud platform
     </div>
 
           <div class="form-control bottom-button">
-               <a href="#profile-page" class="form-button"><button>Save</button></a>
+               <a href="#profile-page" class="form-button"><button class="js-submit-user-edit">Save</button></a>
             </div>
          </form>
 
@@ -808,7 +941,7 @@ google cloud platform
 <!-- end -->
 
   <header class="display-flex flex-row space-between" id="headernav">
-    <h1>Elaine's Bagels</h1>
+<!--     <h1>Elaine's Bagels</h1>
     
       <div class="display-flex flex-row">
 
@@ -817,7 +950,7 @@ google cloud platform
           
          <a href="#profile-page">
           <div class="image-icon" id="profile-icon"  onclick="window.location='#profile-page';"></div>
-        </a>
+        </a> -->
 
   </header>
 

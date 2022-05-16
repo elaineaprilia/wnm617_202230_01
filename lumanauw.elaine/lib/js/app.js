@@ -11,11 +11,13 @@ $(() => {
       // PAGE ROUTING. ada di pages.js
       switch(ui.toPage[0].id) {
          case "nav-page": NavPage(); break;
-         case "map-page": MapPage(); break;
+         case "map-page": ChooseLocationPage(); break;
+
+         case "edit-password": submitPasswordEdit(); break;
 
          case "edit-profile": UserEditPage(); break;
          case "bagel-page": BagelPage(); break;
-         
+
          case "profile-page": ProfPage(); break;
          case "edit-bagel": BagelEditPage(); break;
          case "add-new": BagelAddPage(); break;
@@ -35,10 +37,61 @@ $(() => {
 
 
 
-   // .on("submit", "#signup-form", function(e) {
-   //    e.preventDefault();
-   //    submitUserSignup();
+   // FORM SUBMISSION CLICKS
+
+   .on("click", ".js-submit-bagel-edit", function() {
+      submitBagelEdit();
+   })
+
+   .on("click", ".js-submit-user-edit", function() {
+      submitUserEdit();
+   })
+
+   .on("click", ".js-submit-location-add", function() {
+      submitLocationAdd();
+      getReverseGeocodingData();
+   })
+
+
+   .on("click", ".js-submit-password-edit", function() {
+      submitPasswordEdit();
+   })
+
+
+
+
+   // .on("change",".imagepicker input", function(e){
+   //    console.log(e)
    // })
+
+
+
+   .on("change",".imagepicker input", function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         let filename = `uploads/${d.result}`;
+         $(this).parent().prev().val(filename)
+         $(this).parent().html({
+            "background-image":`url('${filename}');
+            `
+         })
+      })
+   })
+
+
+   .on("click", ".js-submit-user-upload", function(e) {
+      let image = $("#user-edit-photo-image").val();
+      query({
+         type: "update_user_image",
+         params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+})
+
+
 
 
    // FORM CLICKS
@@ -65,7 +118,17 @@ $(() => {
          throw("No id detected");
       }
 
-   })   
+   }) 
+
+
+   .on("click",".js-bagel-delete", function(e) {
+      submitDeleteBagel();
+   })
+
+   .on("click",".js-location-choose-bagel", function(e) {
+      $(".location-bagel").val(sessionStorage.bagelId)
+      console.log()
+   })  
 
 
    // ACTIVATE TOOLS

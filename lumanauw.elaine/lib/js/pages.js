@@ -111,7 +111,39 @@ const UserEditPage = async() => {
   let [user] = users;
 
   $("#user-edit-form").html(makeUserForm(user,"user-edit-form"))
+  // $("#user-password-form").html(makeUserForm(user,"user-password-form"))
 }
+
+
+const PasswordEditPage = async() => {
+  let{result:users} = await query({
+    type:'user_by_id',
+    params:[sessionStorage.userId]
+  })
+  let [user] = users;
+
+  // $("#user-edit-form").html(makeUserForm(user,"user-edit-form"))
+   $("#user-password-form").html(makeUserForm(user,"user-password-form"))
+}
+
+
+
+
+
+
+
+// const submitPasswordEdit = async() => {
+//   let{result:users} = await query({
+//     type:'user_by_id',
+//     params:[sessionStorage.userId]
+//   })
+//   let [user] = users;
+
+//   // $("#user-edit-form").html(makeUserForm(user,"user-edit-form"))
+//  $("#user-password-form").html(makeUserForm(user,"user-password-form"))
+// }
+
+
 
 
 
@@ -138,9 +170,14 @@ const BagelAddPage = async() => {
 
 
 
-const MapPage = async() => {
-
+const ChooseLocationPage = async() => {
    let map_el = await makeMap("#map-page .map-placeholder");
-   makeMarkers(map_el,valid_bagels)
+     
+      map_el.data("map").addListener("click",function(e){
+      console.log(e)
+      $("#location-lat").val(e.latLng.lat())
+      $("#location-lng").val(e.latLng.lng())
+      makeMarkers(map_el,[e.latLng])
+   })
 
 }
