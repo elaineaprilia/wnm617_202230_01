@@ -13,6 +13,9 @@ $(() => {
          case "nav-page": NavPage(); break;
          case "map-page": ChooseLocationPage(); break;
 
+         case "user-edit-photo-page": UserEditPhotoPage(); break;
+         case "bagel-edit-photo-page": BagelEditPhotoPage(); break;
+ 
          case "edit-password": submitPasswordEdit(); break;
 
          case "edit-profile": UserEditPage(); break;
@@ -79,12 +82,27 @@ $(() => {
       })
    })
 
+//IMAGE
 
    .on("click", ".js-submit-user-upload", function(e) {
       let image = $("#user-edit-photo-image").val();
       query({
          type: "update_user_image",
          params: [image, sessionStorage.userId]
+      }).then(d=>{
+         if(d.error) throw(d.error);
+         history.go(-1);
+      })
+})
+
+
+
+
+   .on("click", ".js-submit-bagel-upload", function(e) {
+      let image = $("#bagel-edit-photo-image").val();
+      query({
+         type: "update_bagel_image",
+         params: [image, sessionStorage.bagelId]
       }).then(d=>{
          if(d.error) throw(d.error);
          history.go(-1);

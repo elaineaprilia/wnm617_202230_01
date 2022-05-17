@@ -46,8 +46,6 @@ const submitBagelEdit = async () => {
 
    if(error) throw(error);
 
-   history.go(-2);
-
 
 }
 

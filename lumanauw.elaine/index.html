@@ -276,7 +276,7 @@ google cloud platform
 </div>
 
     <div class="bottom-button">
-      <a href="#nav-page">
+      <a href="#bagel-page">
         <button class="js-submit-location-add">Save your bagel</button>
       </a>
 
@@ -357,9 +357,9 @@ google cloud platform
 
 	<section data-role="page" id="bagel-page">
  	   <header data-role="header" class="display-flex flex-row space-between">
- 	   		<div class="image-icon chevron-left"><a href="#nav-page">back</a></div>
- 			<h1 class="nav-page-top"> </h1>
- 			<div class="image-icon edit"><a href="#map-page" class=" js-location-choose-bagel">+Location</a></div>
+          <a href="#nav-page"><div class="image-icon" id="chevron-left"></div></a>
+ 			<h1 class="nav-page-top"></h1>
+ 			<a href="#map-page" class="js-location-choose-bagel"><div class="image-icon edit" id="location-pin"></div></a>
  		</header>
 
 
@@ -544,20 +544,7 @@ google cloud platform
  		  <h1 class="nav-page-top">Add a new bagel</h1><br><br>
  		</div>
 
- <!--    <br>
-      <div class="display-flex space-between">
-        <p>Pinned location</p>
-        <a onclick="history.back()"><p>Change pin</p></a>
-      </div>
-  <p class="card-result" id="Address">Pin your location...</p>
- -->
-
-<label for="file-upload" data-role="none" class="custom-file-upload" style="display:flex;align-items:center;">
-<input type="hidden" id="animal-edit-photo-image">
-Upload an image
-</label>
-<input id="file-upload" type="file"/>
-</div>
+ 
 
  <div data-role="none">
          <input type="hidden" id="animal-edit-photo-image" data-role="none">
@@ -672,7 +659,9 @@ Upload an image
 
           <div class="form-control bottom-button">
               <div class="form-button js-submit-bagel-edit">
-                <button onclick="javascript:history.go(-1)">Save your bagel</button>
+                <a href="#bagel-page">
+                <button>Save your bagel</button>
+              </a>
               </div>
             </div>
          </form>
@@ -721,6 +710,8 @@ Upload an image
 
 
 
+
+
 <!-- EDIT PHOTO PAGE -->
 <section data-role="page" id="user-edit-photo-page">
 
@@ -745,6 +736,40 @@ Upload an image
 </div>
 
 </section>
+
+
+
+
+<!-- EDIT BAGEL PAGE -->
+<section data-role="page" id="bagel-edit-photo-page">
+
+<header>
+  <a href="#profile-page" class="ui-link"><div class="image-icon" id="chevron-left"></div></a>
+</header>
+
+  <div class="card" style="width:-webkit-fill-available;">
+
+     <input type="hidden" id="bagel-edit-photo-image">
+     <label class="imagepicker replace">
+        <input type='file' id="bagel-edit-photo-input" data-role="none">
+     </label>
+
+<p>Click anywhere to upload an image.</p>
+
+</div>
+
+
+<div class="bottom-button">
+<button class="js-submit-bagel-upload">Save new photo</button>
+</div>
+
+</section>
+
+
+
+
+
+
 
 
 
@@ -935,7 +960,7 @@ Upload an image
 
 <!-- PLUS AND NAV BUTTON -->
 
-    <a href="#map-page"><span class="fixedButton">
+    <a href="#add-new"><span class="fixedButton">
         <div class="roundedFixedBtn">+</div></a></span>
 
 <!-- end -->
@@ -972,7 +997,7 @@ Upload an image
       <br>
 
       <p>Had your first bagel?</p>
-      <a href="#map-page"><button>Add my first bagel</button></a>
+      <a href="#add-new"><button>Add my first bagel</button></a>
     </div>
   </div>
 </div>

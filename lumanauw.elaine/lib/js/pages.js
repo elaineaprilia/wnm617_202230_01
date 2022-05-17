@@ -62,6 +62,12 @@ const NavPage = async() => {
 
 
 
+
+
+
+
+
+
 //profile-page
 const ProfPage = async() => {
   let{result:users} = await query({
@@ -74,6 +80,38 @@ const ProfPage = async() => {
 
   $("#profile-page .page-control").html(makeUserProfilePage(user));
 
+}
+
+
+const BagelEditPhotoPage = async () => {
+   let {result:bagels} = await query({
+      type:'bagel_by_id',
+      params:[sessionStorage.bagelId]
+   })
+   let [bagel] = bagels;
+
+   $("#bagel-edit-photo-page .imagepicker").css({
+      "background-image":`url(${bagel.img})`
+   })
+   
+}
+
+
+
+
+
+
+
+const UserEditPhotoPage = async () => {
+   let {result:users} = await query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   })
+   let [user] = users;
+
+   $("#user-edit-photo-page .imagepicker").css({
+      "background-image":`url(${user.img})`
+   })
 }
 
 
@@ -103,6 +141,11 @@ const BagelPage = async() => {
 
 }
 
+
+
+
+
+
 const UserEditPage = async() => {
   let{result:users} = await query({
     type:'user_by_id',
@@ -113,6 +156,11 @@ const UserEditPage = async() => {
   $("#user-edit-form").html(makeUserForm(user,"user-edit-form"))
   // $("#user-password-form").html(makeUserForm(user,"user-password-form"))
 }
+
+
+
+
+
 
 
 const PasswordEditPage = async() => {

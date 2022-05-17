@@ -291,6 +291,11 @@ button{
     border-radius: 99px !important;
 }
 
+.button-outline.edit-sm{
+    margin: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
 .login-button{
     background-color: black;
     color: white;
@@ -396,10 +401,14 @@ button{
 .image-bagel{
     height: 300px;
 /*    border-radius: 10px;*/
-    background-image: url(../img/bagel/bagel1.jpg);
+/*    background-image: url(../img/bagel/bagel1.jpg);*/
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+
+
+
+    
 }
 
 .profile-image{
@@ -641,6 +650,18 @@ input{
     background-repeat: no-repeat;
 }
 
+
+#location-pin{
+    width: 35px;
+    height: 35px;
+    border-radius: 200px;
+    background-image: url(../icon/location-pin.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;   
+}
+
+
 #profile-icon{
     width: 35px;
     height: 35px;
@@ -664,8 +685,8 @@ input{
 }
 
 #edit-bagelpic{
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     border-radius: 200px;
     background-image: url(../icon/edit-profilepic.png);
     background-position: center;
@@ -676,8 +697,8 @@ input{
 }
 
 #delete-bagelpic{
-    width: 35px;
-    height: 35px;
+    width: 28px;
+    height: 28px;
     border-radius: 200px;
     background-image: url(../icon/trash-icon.png);
     background-position: center;
