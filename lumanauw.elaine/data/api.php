@@ -257,6 +257,23 @@ function makeStatement($data) {
 
 
 
+      case "search_bagels":
+         $p = ["%$p[0]%", $p[1]];
+         return makeQuery($c,"SELECT *
+            FROM `bagel_data`
+            WHERE
+               `type` LIKE ? AND
+               `user_id` = ?
+            ",$p);
+
+      case "filter_bagels":
+         return makeQuery($c,"SELECT *
+            FROM `bagel_data`
+            WHERE
+               `$p[0]` = ? AND
+               `user_id` = ?
+            ",[$p[1],$p[2]]);
+
 
 
 

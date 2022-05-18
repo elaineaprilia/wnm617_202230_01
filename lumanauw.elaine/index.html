@@ -1,3 +1,6 @@
+
+
+
 <!-- AIzaSyDuiwGbdLhnkih5qmnaS8WDVqT61i2dh5g
 google cloud platform
  -->
@@ -266,9 +269,6 @@ google cloud platform
     </div>
   </div>
 
-  <div class="page-control">
-      <h2 class="nav-page-top">Add a memorable description</h2><br>
-
   <textarea id="location-description" class="form-input" data-role="none" placeholder="About your bagel..."></textarea>
 
 </div>
@@ -316,7 +316,7 @@ google cloud platform
   <section data-role="page" id="map-page">
 <div class="ui-index" style="position:absolute !important">
   <header data-role="header display-flex space-between" class="navbar-header-pin" style="z-index: 999 !important;">
-      <div class="image-icon chevron-left" onclick="history.back()">back</div>
+      <a href="#nav-page"><div class="image-icon chevron-left">back</div></a>
         <h1 class="nav-page-top">Drop your pin</h1>
            <a href="#location-details">skip</a></div>
   </header>
@@ -914,7 +914,10 @@ google cloud platform
 
 <div class="tab-control">
 <button class="tablink" onclick="openPage('Map', this, 'red')" style='color:var(--black) !important;'>Map</button>
-<button class="tablink" onclick="openPage('Gallery', this, 'orange')"  style='color:var(--black);' id="defaultOpen">Gallery</button>
+<button class="tablink" onclick="openPage('Location', this, 'red')" style='color:var(--black) !important;'>Location</button>
+<button class="tablink" onclick="openPage('Gallery', this, 'orange')"  style='color:var(--black);' id="deftabaultOpen">Gallery</button>
+
+
 </div>
 </div>
 <!-- end -->
@@ -928,15 +931,24 @@ google cloud platform
   </div>
 
 
+<!-- LOCATION GOES HERE -->
+
+  <div id="Location" class="tabcontent" style="overflow:auto;">
+  <div class="page-control">
+<!--         <h2 style="margin:0 50px;translate:transformY(-20px);">Most recent bagel locations</h2> -->
+    <div class="recent-gallery display-flex flex-column"></div>
+  </div>
+  </div>
+
 <!-- BAGEL GALLERY LIST GOES HERE -->
 
   <div id="Gallery" class="tabcontent" style="padding-top:0;overflow: auto;!important">
 
 
-<form class="form">
-  <div class="form-control-search">
-          <input type="text" placeholder="search..." id="search-form-bagel" data-role="none" class="form-input">
-  </div>
+<form data-ajax="false" id="list-search-form" class="form-control-search">
+          <input type="search" placeholder="search..." data-role="none" class="form-input" data-ajax="false">
+</form>
+
  </form>
 
 

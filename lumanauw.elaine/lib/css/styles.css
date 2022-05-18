@@ -1,5 +1,9 @@
 /*  CSS RESET  */
 
+.ui-header{
+    border-width: 0;
+}
+
 *, *::after, *::before {
     box-sizing: border-box;
     margin: 0;
@@ -89,7 +93,7 @@ body{
   cursor: pointer;
   padding: 14px 16px;
   font-size: 17px;
-  width: 50% !important;
+  width: 33% !important;
 }
 
  .tabcontent {
@@ -177,6 +181,13 @@ a{
 }
 
 .gallery-control{
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 3rem;
+}
+
+
+.recent-gallery{
   display: flex;
   justify-content: space-around;
   padding-bottom: 3rem;

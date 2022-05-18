@@ -149,6 +149,21 @@ $(() => {
    })  
 
 
+
+
+
+
+   .on("submit", "#list-search-form", function(e) {
+      e.preventDefault();
+      let s = $(this).find("input").val();
+      checkSearchForm(s);
+   })
+
+
+
+
+
+
    // ACTIVATE TOOLS
    .on("click", "[data-activate]", function() {
       let target = $(this).data("activate");

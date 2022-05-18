@@ -6,7 +6,11 @@ const NavPage = async() => {
       type:'recent_bagel_locations',
       params:[sessionStorage.userId]
    });
-   console.log(result);
+   // console.log(result);
+   $("#nav-page .recent-gallery").html(makeLocationList(result));
+   
+
+
 
    let valid_bagels = result.reduce((r,o)=>{
       o.icon = o.img;
@@ -15,45 +19,53 @@ const NavPage = async() => {
    },[]);
 
 
-   let map_el = await makeMap("#nav-page .map-placeholder");
-   makeMarkers(map_el,valid_bagels)
+
+
+let map_el = await makeMap("#nav-page .map-placeholder");
+makeMarkers(map_el,valid_bagels)
 
    map_el.data("markers").forEach((m,i)=>{
       console.log(m)
       m.addListener("click",function(e){
          let bagel = valid_bagels[i];
 
-         console.log(bagel)
+         // console.log(bagel)
 
          $("#map-drawer")
             .addClass("active")
             .find(".modal-body")
             .html(makeBagelPopupBody({...bagel, id:bagel.bagel_id}))
       })
+
    })
 
-  let {result:bagels} = await query({
+
+let {result:bagels} = await query({
   	type:'bagels_by_user_id',
   	params:[sessionStorage.userId]
   })
 
-	console.log(bagels)
+	// console.log(bagels)
 	$("#nav-page .gallery-control").html(makeBagelList(bagels));
 
-  console.log()
 
-  let {result:locations} = await query({
+
+
+let {result:locations} = await query({
     type:'locations_by_bagel_id',
     params:[sessionStorage.bagelId]
   })
 
-  let{result:users} = await query({
+
+
+
+let{result:users} = await query({
     type:'user_by_id',
     params:[sessionStorage.userId]
   })
   let [user] = users;
 
-  console.log(user)
+// console.log(user)
 
    $("#nav-page #headernav-fill").html(displayProfileIcon(user));
    $("#nav-page-empty-state #headernav").html(displayProfileIcon(user));
@@ -63,6 +75,26 @@ const NavPage = async() => {
 
 
 
+//list-page
+
+
+const ListPage = async() => {
+   // destructuring
+   let {result:bagels} = await query({
+      type:'bagels_by_user_id',
+      params:[sessionStorage.userId]
+   })
+   
+   console.log(bagels)
+
+   makeBagelListSet(bagels);
+}
+
+
+
+const makeBagelListSet = (bagels) => {
+  $("#nav-page .display-grid-gallery").html(makeBagelList(bagels));
+}
 
 
 
@@ -93,7 +125,7 @@ const BagelEditPhotoPage = async () => {
    $("#bagel-edit-photo-page .imagepicker").css({
       "background-image":`url(${bagel.img})`
    })
-   
+
 }
 
 

@@ -8,8 +8,25 @@ const makeBagelList = templater(o=>`
 `);
 
 
+const makeLocationList = templater(o=>`   
+<div class="js-bagel-jump card display-flex flex-row" style="margin:0; margin-bottom:10px; !important">
+  <img src="${o.img}" style="width:30%">
+    <div class="display-flex flex-column" style="padding-left:10px;">
+      <h1 id='location-lat'>${o.lat}</h1>
+      <h1 id='location-lng'>${o.lng}</h1>
+      getReverseGeocodingData();
+  </div>
+</div>
+</div>
+</div>
+`);
+
+
+
+
+
 const displayProfileIcon = o =>`
-    <h1>${o.username}</h1>
+    <h1>Hello, ${o.username}! 🥯</h1>
     
       <div class="display-flex flex-row">
 

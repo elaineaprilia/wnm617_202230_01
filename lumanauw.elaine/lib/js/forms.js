@@ -161,6 +161,9 @@ const getReverseGeocodingData = async() => {
 
   var lat = document.getElementById('location-lat').value;
   var lng = document.getElementById('location-lng').value;
+  let description = $("#Address").val();
+
+  console.log({lat,lng,description})
 
     var latlng = new google.maps.LatLng(lat, lng);
 
@@ -180,4 +183,33 @@ const getReverseGeocodingData = async() => {
          console.log(results);
     });
 
+}
+
+
+
+
+const checkSearchForm = async (s) => {
+   let {result:bagels,error} = await query({
+      type: 'search_bagels',
+      params: [s, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeBagelListSet(bagels);
+}
+
+
+
+
+
+const checkFilter = async (f,v) => {
+   let {result:bagels,error} = await query({
+      type: 'filter_bagels',
+      params: [f, v, sessionStorage.userId]
+   });
+
+   if(error) throw(error);
+
+   makeBagelListSet(bagels);
 }
