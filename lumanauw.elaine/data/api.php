@@ -107,13 +107,13 @@ function makeStatement($data) {
                   SELECT lt.id
                   FROM `location_data` lt
                   WHERE lt.bagel_id = lg.bagel_id
-                  ORDER BY lt.date_create DESC
+                  ORDER BY lt.date_create ASC
                   LIMIT 1
                )
             ) l
             ON a.id = l.bagel_id
             WHERE a.user_id = ?
-            ORDER BY l.bagel_id, l.date_create DESC
+            ORDER BY l.bagel_id, l.date_create ASC
          ", $p);
 
 
@@ -162,9 +162,9 @@ function makeStatement($data) {
       case "insert_location":
          makeQuery($c,"INSERT INTO
             `location_data`
-            (`bagel_id`,`lat`,`lng`,`description`,`img`,`icon`,`date_create`)
+            (`bagel_id`,`lat`,`lng`,`description`,`img`,`icon`,`date_create`,`address`)
             VALUES
-            (?, ?, ?, ?, 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', NOW())
+            (?, ?, ?, ?, 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', 'https://lumanauw.xyz/aau/wnm617/lumanauw.elaine/lib/icon/bagel-icon.png', NOW(),?)
             ", $p, false);
          return ["id"=>$c->lastInsertId()];
 

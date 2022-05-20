@@ -137,18 +137,18 @@ const submitPasswordEdit = async () => {
 
 
 
-const submitLocationAdd = async () => {
+const submitLocationAdd = async (address) => {
    let bagel = $(".location-bagel").val();
    let lat = $("#location-lat").val();
    let lng = $("#location-lng").val();
    let description = $("#location-description").val();
 
-   console.log({bagel,lat,lng,description})
+   console.log({bagel,lat,lng,description,address})
 
 
    let {result,error} = await query({
       type: 'insert_location',
-      params: [bagel,lat,lng,description]
+      params: [bagel,lat,lng,description,address]
    });
 
    if(error) console.log(error);
@@ -169,19 +169,26 @@ const getReverseGeocodingData = async() => {
 
     // This is making the Geocode request
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({ 'latLng': latlng },  (results, status) =>{
-        if (status !== google.maps.GeocoderStatus.OK) {
-            alert(status);
-        }
+     let response = await geocoder.geocode({ 'latLng': latlng },
+      // (results, status) =>{
+    );
+
+     // if (status !== google.maps.GeocoderStatus.OK) {
+     //        alert(status);
+     //    }
         // This is checking to see if the Geoeode Status is OK before proceeding
-        if (status == google.maps.GeocoderStatus.OK) {
-            var address = (results[1].formatted_address);
+        // if (status == google.maps.GeocoderStatus.OK) {
+        //     var address = (results[1].formatted_address);
+      let address = response.results[0].formatted_address;
 
-      document.getElementById("Address").innerHTML = value= results[0].formatted_address;
-        }
+      document.getElementById("Address").innerHTML = value= address;
+        // }
 
-         console.log(results);
-    });
+
+      console.log(address)
+
+      return address;
+
 
 }
 

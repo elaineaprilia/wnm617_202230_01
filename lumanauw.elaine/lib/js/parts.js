@@ -8,13 +8,14 @@ const makeBagelList = templater(o=>`
 `);
 
 
-const makeLocationList = templater(o=>`   
+
+
+const makeLocationList = templater( o=>`   
 <div class="js-bagel-jump card display-flex flex-row" style="margin:0; margin-bottom:10px; !important">
-  <img src="${o.img}" style="width:30%">
+  <img src="${o.img}" style="width:40px;height:40px;">
     <div class="display-flex flex-column" style="padding-left:10px;">
-      <h1 id='location-lat'>${o.lat}</h1>
-      <h1 id='location-lng'>${o.lng}</h1>
-      getReverseGeocodingData();
+      <h1 id='location-lat'>${o.type}</h1>
+      <p id='location-lng'>${o.address}</p>
   </div>
 </div>
 </div>
@@ -43,7 +44,7 @@ const displayProfileIcon = o =>`
 
 const makeBagelPopupBody = o =>`
    <div class="display-flex space-between js-bagel-jump noclick-children" data-id="${o.bagel_id}" style="display:flex;justify-content:space-evenly;">
-      <img src="${o.img}" alt="" style="width:30%">
+      <img src="${o.img}" alt="" style="width:100px;height:100px;margin-right:10px;">
    <div>
    <h2>${o.type}</h2>
    <p>${o.spread}</p>

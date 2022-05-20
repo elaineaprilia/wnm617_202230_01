@@ -51,9 +51,12 @@ $(() => {
    })
 
    .on("click", ".js-submit-location-add", function() {
-      submitLocationAdd();
-      getReverseGeocodingData();
-   })
+      getReverseGeocodingData().then ((address) => {
+        
+   console.log(address)
+
+      submitLocationAdd(address);
+   })})
 
 
    .on("click", ".js-submit-password-edit", function() {
