@@ -15,6 +15,9 @@ google cloud platform
 
    <base href="/aau/wnm617/lumanauw.elaine/">
 
+   <meta name="mobile-web-app-capable" content="yes">
+   <link rel="icon" sizes="300x300" href="icon.png">
+
    <link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
    <link rel="stylesheet" href="lib/css/styles.css">
 
@@ -715,7 +718,7 @@ google cloud platform
 <!-- EDIT PHOTO PAGE -->
 <section data-role="page" id="user-edit-photo-page">
 
-<header>
+<header style="z-index: 999;">
   <a href="#profile-page" class="ui-link"><div class="image-icon" id="chevron-left"></div></a>
 </header>
 
@@ -744,7 +747,7 @@ google cloud platform
 <section data-role="page" id="bagel-edit-photo-page">
 
 <header>
-  <a href="#profile-page" class="ui-link"><div class="image-icon" id="chevron-left"></div></a>
+  <a href="#bagel-page" class="ui-link"><div class="image-icon" id="chevron-left"></div></a>
 </header>
 
   <div class="card" style="width:-webkit-fill-available;">
@@ -946,7 +949,10 @@ google cloud platform
 
 
 <form data-ajax="false" id="list-search-form" class="form-control-search">
-          <input type="search" placeholder="search..." data-role="none" class="form-input" data-ajax="false">
+          <input type="search" placeholder="search..." data-role="none" class="form-input" data-ajax="false" style="border-width: 1px;
+    background-color: white;
+    border-color: var(--primarycolor);
+    box-shadow: 11px 16px 23px 4px rgb(0 0 0 / 7%);">
 </form>
 
  </form>
